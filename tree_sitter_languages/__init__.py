@@ -1,17 +1,10 @@
 """Tree Sitter with Languages
 """
 
-import pathlib
-
-from tree_sitter import Language, Parser
-
-
-def get_parser(language):
-    binary_path = str(pathlib.Path(__file__).parent / 'languages.so')
-    language = Language(binary_path, language)
-    parser = Parser()
-    parser.set_language(language)
-    return parser
-
+from .core import get_parser
 
 __version__ = '0.0.0'
+__title__ = 'tree_sitter_languages'
+__author__ = 'Grant Jenks'
+__license__ = 'Apache 2.0'
+__copyright__ = '2022, Grant Jenks'

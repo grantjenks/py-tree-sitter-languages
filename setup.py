@@ -2,6 +2,7 @@ import pathlib
 import re
 import setuptools
 
+from Cython.Build import cythonize
 
 init = (pathlib.Path('tree_sitter_languages') / '__init__.py').read_text()
 match = re.search(r"^__version__ = '(.+)'$", init, re.MULTILINE)
@@ -19,6 +20,7 @@ setuptools.setup(
     author_email='contact@grantjenks.com',
     url='https://github.com/grantjenks/py-tree-sitter-languages',
     license='Apache 2.0',
+    ext_modules=cythonize('tree_sitter_languages/core.pyx'),
     packages=['tree_sitter_languages'],
     package_data={'tree_sitter_languages': ['languages.so']},
     install_requires=['tree-sitter'],

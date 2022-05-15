@@ -1,3 +1,4 @@
+pip install cython
 pip install -e .
 
 mkdir vendor

@@ -1,0 +1,9 @@
+*.pyc
+*.so
+
+env*/
+
+vendor/
+build/
+dist/
+*.egg-info/

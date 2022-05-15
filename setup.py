@@ -20,6 +20,7 @@ setuptools.setup(
     url='https://github.com/grantjenks/py-tree-sitter-languages',
     license='Apache 2.0',
     packages=['tree_sitter_languages'],
+    package_data={'tree_sitter_languages': ['languages.so']},
     install_requires=['tree-sitter'],
     project_urls={
         'Documentation': 'https://github.com/grantjenks/py-tree-sitter-languages',

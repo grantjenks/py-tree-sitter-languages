@@ -41,7 +41,6 @@ git clone --depth 1 https://github.com/tree-sitter/tree-sitter-ocaml
 git clone --depth 1 https://github.com/tree-sitter/tree-sitter-php
 git clone --depth 1 https://github.com/tree-sitter/tree-sitter-python
 git clone --depth 1 https://github.com/tree-sitter/tree-sitter-ql
-git clone --depth 1 https://github.com/tree-sitter/tree-sitter-razor
 git clone --depth 1 https://github.com/tree-sitter/tree-sitter-regex
 git clone --depth 1 https://github.com/tree-sitter/tree-sitter-ruby
 git clone --depth 1 https://github.com/tree-sitter/tree-sitter-rust

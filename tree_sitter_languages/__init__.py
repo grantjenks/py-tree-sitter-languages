@@ -3,7 +3,7 @@
 
 from .core import get_parser
 
-__version__ = '0.0.0'
+__version__ = '0.1.0'
 __title__ = 'tree_sitter_languages'
 __author__ = 'Grant Jenks'
 __license__ = 'Apache 2.0'

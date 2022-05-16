@@ -17,7 +17,7 @@ to download and compile support for inndividual languages.
 Install
 =======
 
-.. code-block:: shell
+::
 
    pip install tree_sitter_languages
 
@@ -37,7 +37,7 @@ at:
 Usage
 =====
 
-.. code-block:: python
+::
 
    from tree_sitter_languages import get_language, get_parser
 
@@ -58,8 +58,6 @@ Want to know something crazy? Python lacks multi-line comments. Whhaaa!?!
 
 It's really not such a big deal. Instead of writing::
 
-.. code-block:: python
-
    """
    My awesome
    multi-line
@@ -67,8 +65,6 @@ It's really not such a big deal. Instead of writing::
    """
 
 Simply write::
-
-.. code-block:: python
 
    # My awesome
    # multi-line
@@ -79,9 +75,7 @@ sequence. Amazing!
 
 Now, how to find all the multi-line strings being used as comments?
 
-Start with some example Python code:
-
-.. code-block:: python
+Start with some example Python code::
 
    example = """
    #!shebang
@@ -126,9 +120,7 @@ Notice a couple things:
 Creating a regular expression to capture the phony multi-line string comments
 would be exceedingly difficult!
 
-Enter `tree-sitter <https://tree-sitter.github.io/>`...
-
-.. code-block:: python
+Enter `tree-sitter <https://tree-sitter.github.io/>`::
 
    from tree_sitter_languages import get_language, get_parser
 
@@ -136,17 +128,13 @@ Enter `tree-sitter <https://tree-sitter.github.io/>`...
    parser = get_parser('python')
 
 Tree-sitter creates an abstract syntax tree (actually, a concrete syntax tree)
-and supports queries.
-
-.. code-block:: python
+and supports queries::
 
    tree = parser.parse(example.encode())
    node = tree.root_node
    print(node.sexp())
 
-Look for statements that are a single string expression.
-
-.. code-block:: python
+Look for statements that are a single string expression::
 
    stmt_str_pattern = '(expression_statement (string)) @stmt_str'
    stmt_str_query = language.query(stmt_str_pattern)
@@ -156,10 +144,8 @@ Look for statements that are a single string expression.
    )
    print(stmt_str_points)
 
-Now, remove those statement string expressions that are actually module, class,
-or function docstrings.
-
-.. code-block:: python
+Now, find those statement string expressions that are actually module, class,
+or function docstrings::
 
    doc_str_pattern = """
        (module . (comment)* . (expression_statement (string)) @module_doc_str)
@@ -177,9 +163,7 @@ or function docstrings.
    )
 
 With the set of string expression statements and the set of docstring
-statements, the locations of all phony multi-line string comments is:
-
-.. code-block:: python
+statements, the locations of all phony multi-line string comments is::
 
    comment_strs = stmt_str_points - doc_str_points
    print(sorted(comment_strs))

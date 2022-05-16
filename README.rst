@@ -4,14 +4,14 @@ Python Bindings for Tree Sitter with All Languages
 
 Binary Python wheels for all tree sitter languages.
 
-`py-tree-sitter <https://github.com/tree-sitter/py-tree-sitter>` is a fantastic
-library that provides Python bindings for the even more fantastic `tree-sitter
-<https://github.com/tree-sitter/tree-sitter>` parsing library.
+`py-tree-sitter`_ is a fantastic library that provides Python bindings for the
+even more fantastic `tree-sitter`_ parsing library.
 
-`py-tree-sitter-languages
-<https://github.com/grantjenks/py-tree-sitter-languages>` provides binary
-Python wheels for all tree sitter languages. The binary wheels remove the need
-to download and compile support for inndividual languages.
+`py-tree-sitter-languages`_ provides binary Python wheels for all tree sitter
+languages. The binary wheels remove the need to download and compile support
+for individual languages.
+
+.. _`py-tree-sitter-languages`: https://github.com/grantjenks/py-tree-sitter-languages
 
 
 Install
@@ -24,14 +24,16 @@ Install
 Source installs are not supported. To see how the binary wheels are built, look
 at:
 
-1. ./setup.py -- Python package setup.
+1. setup.py -- Python package setup.
 
-2. ./build.sh -- Shell script to download support for all languages.
+2. build.sh -- Shell script to download support for all languages.
 
-3. ./build.py -- Python script to build support for all languages.
+3. build.py -- Python script to build support for all languages.
 
-4. ./.github/workflows/release.yml -- GitHub action to invoke `cibuildwheel
-   <https://github.com/pypa/cibuildwheel>` and release to PyPI.
+4. .github/workflows/release.yml -- GitHub action to invoke `cibuildwheel`_ and
+   release to PyPI.
+
+.. _`cibuildwheel`: https://github.com/pypa/cibuildwheel
 
 
 Usage
@@ -46,9 +48,11 @@ Usage
 
 That's the whole API!
 
-Refer to `py-tree-sitter <https://github.com/tree-sitter/py-tree-sitter>` for
-the language and parser API. Notice the `Language.build_library` step can be
-skipped! The binary wheel includes the language binary.
+Refer to `py-tree-sitter`_ for the language and parser API. Notice the
+``Language.build_library(...)`` step can be skipped! The binary wheel includes
+the language binary.
+
+.. _`py-tree-sitter`: https://github.com/tree-sitter/py-tree-sitter
 
 
 Demo
@@ -120,7 +124,7 @@ Notice a couple things:
 Creating a regular expression to capture the phony multi-line string comments
 would be exceedingly difficult!
 
-Enter `tree-sitter <https://tree-sitter.github.io/>`::
+Enter `tree-sitter`_::
 
    from tree_sitter_languages import get_language, get_parser
 
@@ -167,3 +171,5 @@ statements, the locations of all phony multi-line string comments is::
 
    comment_strs = stmt_str_points - doc_str_points
    print(sorted(comment_strs))
+
+.. _`tree-sitter`: https://tree-sitter.github.io/

@@ -77,7 +77,7 @@ Simply write::
 So multi-line comments are made by putting multiple single-line comments in
 sequence. Amazing!
 
-Now, how to find all the multi-line strings being used as comments?
+Now, how to find all the strings being used as comments?
 
 Start with some example Python code::
 
@@ -115,14 +115,14 @@ Start with some example Python code::
 Notice a couple things:
 
 1. Python has module, class, and function docstrings that bare a striking
-   resemblance to the phony multi-line string comments.
+   resemblance to the phony string comments.
 
 2. Python supports single-quoted, double-quoted, triple-single-quoted, and
-   triple-double-quoted strings (not to mention prefixes for raw and unicode
-   strings).
+   triple-double-quoted strings (not to mention prefixes for raw strings,
+   unicode strings, and more).
 
-Creating a regular expression to capture the phony multi-line string comments
-would be exceedingly difficult!
+Creating a regular expression to capture the phony string comments would be
+exceedingly difficult!
 
 Enter `tree-sitter`_::
 
@@ -131,12 +131,14 @@ Enter `tree-sitter`_::
    language = get_language('python')
    parser = get_parser('python')
 
-Tree-sitter creates an abstract syntax tree (actually, a concrete syntax tree)
-and supports queries::
+Tree-sitter creates an abstract syntax tree (actually, a `concrete syntax
+tree`_) and supports queries::
 
    tree = parser.parse(example.encode())
    node = tree.root_node
    print(node.sexp())
+
+.. _`concrete syntax tree`: https://stackoverflow.com/q/1888854/232571
 
 Look for statements that are a single string expression::
 
@@ -167,7 +169,7 @@ or function docstrings::
    )
 
 With the set of string expression statements and the set of docstring
-statements, the locations of all phony multi-line string comments is::
+statements, the locations of all phony string comments is::
 
    comment_strs = stmt_str_points - doc_str_points
    print(sorted(comment_strs))

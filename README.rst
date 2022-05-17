@@ -194,140 +194,140 @@ specific language governing permissions and limitations under the License.
 The project also includes the following other projects distributed in binary
 form:
 
-* https://github.com/tree-sitter/tree-sitter -- licensed under the MIT License.
+* https://github.com/tree-sitter/tree-sitter — licensed under the MIT License.
 
-* https://github.com/AbstractMachinesLab/tree-sitter-erlang -- licensed under
+* https://github.com/AbstractMachinesLab/tree-sitter-erlang — licensed under
   the Apache License, Version 2.0.
 
-* https://github.com/Azganoth/tree-sitter-lua -- licensed under the MIT
+* https://github.com/Azganoth/tree-sitter-lua — licensed under the MIT
   License.
 
-* https://github.com/Wilfred/tree-sitter-elisp -- licensed under the MIT
+* https://github.com/Wilfred/tree-sitter-elisp — licensed under the MIT
   License.
 
-* https://github.com/alemuller/tree-sitter-make -- licensed under the MIT
+* https://github.com/alemuller/tree-sitter-make — licensed under the MIT
   License.
 
-* https://github.com/camdencheek/tree-sitter-dockerfile -- licensed under the
+* https://github.com/camdencheek/tree-sitter-dockerfile — licensed under the
   MIT License.
 
-* https://github.com/camdencheek/tree-sitter-go-mod -- licensed under the MIT
+* https://github.com/camdencheek/tree-sitter-go-mod — licensed under the MIT
   License.
 
-* https://github.com/elixir-lang/tree-sitter-elixir -- licensed under the
+* https://github.com/elixir-lang/tree-sitter-elixir — licensed under the
   Apache License, Version 2.0.
 
-* https://github.com/elm-tooling/tree-sitter-elm -- licensed under the MIT
+* https://github.com/elm-tooling/tree-sitter-elm — licensed under the MIT
   License.
 
-* https://github.com/fwcd/tree-sitter-kotlin -- licensed under the MIT License.
+* https://github.com/fwcd/tree-sitter-kotlin — licensed under the MIT License.
 
-* https://github.com/ganezdragon/tree-sitter-perl -- licensed under the MIT
+* https://github.com/ganezdragon/tree-sitter-perl — licensed under the MIT
   License.
 
-* https://github.com/ikatyang/tree-sitter-markdown -- licensed under the MIT
+* https://github.com/ikatyang/tree-sitter-markdown — licensed under the MIT
   License.
 
-* https://github.com/ikatyang/tree-sitter-toml -- licensed under the MIT
+* https://github.com/ikatyang/tree-sitter-toml — licensed under the MIT
   License.
 
-* https://github.com/ikatyang/tree-sitter-yaml -- licensed under the MIT
+* https://github.com/ikatyang/tree-sitter-yaml — licensed under the MIT
   License.
 
-* https://github.com/jiyee/tree-sitter-objc -- licensed under the MIT License.
+* https://github.com/jiyee/tree-sitter-objc — licensed under the MIT License.
 
-* https://github.com/m-novikov/tree-sitter-sql -- licensed under the MIT
+* https://github.com/m-novikov/tree-sitter-sql — licensed under the MIT
   License.
 
-* https://github.com/r-lib/tree-sitter-r -- licensed under the MIT License.
+* https://github.com/r-lib/tree-sitter-r — licensed under the MIT License.
 
-* https://github.com/rydesun/tree-sitter-dot -- licensed under the MIT License.
+* https://github.com/rydesun/tree-sitter-dot — licensed under the MIT License.
 
-* https://github.com/slackhq/tree-sitter-hack -- licensed under the MIT
+* https://github.com/slackhq/tree-sitter-hack — licensed under the MIT
   License.
 
-* https://github.com/theHamsta/tree-sitter-commonlisp -- licensed under the MIT
+* https://github.com/theHamsta/tree-sitter-commonlisp — licensed under the MIT
   License.
 
-* https://github.com/tree-sitter/tree-sitter-bash -- licensed under the MIT
+* https://github.com/tree-sitter/tree-sitter-bash — licensed under the MIT
   License.
 
-* https://github.com/tree-sitter/tree-sitter-c -- licensed under the MIT
+* https://github.com/tree-sitter/tree-sitter-c — licensed under the MIT
   License.
 
-* https://github.com/tree-sitter/tree-sitter-c-sharp -- licensed under the MIT
+* https://github.com/tree-sitter/tree-sitter-c-sharp — licensed under the MIT
   License.
 
-* https://github.com/tree-sitter/tree-sitter-cpp -- licensed under the MIT
+* https://github.com/tree-sitter/tree-sitter-cpp — licensed under the MIT
   License.
 
-* https://github.com/tree-sitter/tree-sitter-css -- licensed under the MIT
+* https://github.com/tree-sitter/tree-sitter-css — licensed under the MIT
   License.
 
-* https://github.com/tree-sitter/tree-sitter-embedded-template -- licensed
+* https://github.com/tree-sitter/tree-sitter-embedded-template — licensed
   under the MIT License.
 
-* https://github.com/tree-sitter/tree-sitter-go -- licensed under the MIT
+* https://github.com/tree-sitter/tree-sitter-go — licensed under the MIT
   License.
 
-* https://github.com/tree-sitter/tree-sitter-haskell -- licensed under the MIT
+* https://github.com/tree-sitter/tree-sitter-haskell — licensed under the MIT
   License.
 
-* https://github.com/tree-sitter/tree-sitter-html -- licensed under the MIT
+* https://github.com/tree-sitter/tree-sitter-html — licensed under the MIT
   License.
 
-* https://github.com/tree-sitter/tree-sitter-java -- licensed under the MIT
+* https://github.com/tree-sitter/tree-sitter-java — licensed under the MIT
   License.
 
-* https://github.com/tree-sitter/tree-sitter-javascript -- licensed under the
+* https://github.com/tree-sitter/tree-sitter-javascript — licensed under the
   MIT License.
 
-* https://github.com/tree-sitter/tree-sitter-jsdoc -- licensed under the MIT
+* https://github.com/tree-sitter/tree-sitter-jsdoc — licensed under the MIT
   License.
 
-* https://github.com/tree-sitter/tree-sitter-json -- licensed under the MIT
+* https://github.com/tree-sitter/tree-sitter-json — licensed under the MIT
   License.
 
-* https://github.com/tree-sitter/tree-sitter-julia -- licensed under the MIT
+* https://github.com/tree-sitter/tree-sitter-julia — licensed under the MIT
   License.
 
-* https://github.com/tree-sitter/tree-sitter-ocaml -- licensed under the MIT
+* https://github.com/tree-sitter/tree-sitter-ocaml — licensed under the MIT
   License.
 
-* https://github.com/tree-sitter/tree-sitter-php -- licensed under the MIT
+* https://github.com/tree-sitter/tree-sitter-php — licensed under the MIT
   License.
 
-* https://github.com/tree-sitter/tree-sitter-python -- licensed under the MIT
+* https://github.com/tree-sitter/tree-sitter-python — licensed under the MIT
   License.
 
-* https://github.com/tree-sitter/tree-sitter-ql -- licensed under the MIT
+* https://github.com/tree-sitter/tree-sitter-ql — licensed under the MIT
   License.
 
-* https://github.com/tree-sitter/tree-sitter-regex -- licensed under the MIT
+* https://github.com/tree-sitter/tree-sitter-regex — licensed under the MIT
   License.
 
-* https://github.com/tree-sitter/tree-sitter-ruby -- licensed under the MIT
+* https://github.com/tree-sitter/tree-sitter-ruby — licensed under the MIT
   License.
 
-* https://github.com/tree-sitter/tree-sitter-rust -- licensed under the MIT
+* https://github.com/tree-sitter/tree-sitter-rust — licensed under the MIT
   License.
 
-* https://github.com/tree-sitter/tree-sitter-scala -- licensed under the MIT
+* https://github.com/tree-sitter/tree-sitter-scala — licensed under the MIT
   License.
 
-* https://github.com/alex-pinkus/tree-sitter-swift -- licensed under the MIT
+* https://github.com/alex-pinkus/tree-sitter-swift — licensed under the MIT
   License.
 
-* https://github.com/tree-sitter/tree-sitter-toml -- licensed under the MIT
+* https://github.com/tree-sitter/tree-sitter-toml — licensed under the MIT
   License.
 
-* https://github.com/tree-sitter/tree-sitter-tsq -- licensed under the MIT
+* https://github.com/tree-sitter/tree-sitter-tsq — licensed under the MIT
   License.
 
-* https://github.com/tree-sitter/tree-sitter-typescript -- licensed under the
+* https://github.com/tree-sitter/tree-sitter-typescript — licensed under the
   MIT License.
 
-* https://github.com/tree-sitter/tree-sitter-verilog -- licensed under the MIT
+* https://github.com/tree-sitter/tree-sitter-verilog — licensed under the MIT
   License.
 
 

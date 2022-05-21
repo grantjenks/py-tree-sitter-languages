@@ -315,7 +315,7 @@ form:
 * https://github.com/tree-sitter/tree-sitter-scala — licensed under the MIT
   License.
 
-* https://github.com/alex-pinkus/tree-sitter-swift — licensed under the MIT
+* https://github.com/tree-sitter/tree-sitter-swift — licensed under the MIT
   License.
 
 * https://github.com/tree-sitter/tree-sitter-toml — licensed under the MIT

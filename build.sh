@@ -45,7 +45,7 @@ git clone --depth 1 https://github.com/tree-sitter/tree-sitter-regex
 git clone --depth 1 https://github.com/tree-sitter/tree-sitter-ruby
 git clone --depth 1 https://github.com/tree-sitter/tree-sitter-rust
 git clone --depth 1 https://github.com/tree-sitter/tree-sitter-scala
-git clone --depth 1 https://github.com/alex-pinkus/tree-sitter-swift
+git clone --depth 1 https://github.com/tree-sitter/tree-sitter-swift
 git clone --depth 1 https://github.com/tree-sitter/tree-sitter-toml
 git clone --depth 1 https://github.com/tree-sitter/tree-sitter-tsq
 git clone --depth 1 https://github.com/tree-sitter/tree-sitter-typescript

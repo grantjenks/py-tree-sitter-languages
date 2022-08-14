@@ -1,4 +1,3 @@
-from textwrap import dedent
 from tree_sitter_languages import get_language, get_parser
 
 PYTHON_CODE = """

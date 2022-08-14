@@ -15,7 +15,6 @@ git clone --depth 1 https://github.com/elm-tooling/tree-sitter-elm
 git clone --depth 1 https://github.com/fwcd/tree-sitter-kotlin
 git clone --depth 1 https://github.com/ganezdragon/tree-sitter-perl
 git clone --depth 1 https://github.com/ikatyang/tree-sitter-markdown
-git clone --depth 1 https://github.com/ikatyang/tree-sitter-toml
 git clone --depth 1 https://github.com/ikatyang/tree-sitter-yaml
 git clone --depth 1 https://github.com/jiyee/tree-sitter-objc
 git clone --depth 1 https://github.com/m-novikov/tree-sitter-sql

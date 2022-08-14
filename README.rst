@@ -228,9 +228,6 @@ form:
 * https://github.com/ikatyang/tree-sitter-markdown — licensed under the MIT
   License.
 
-* https://github.com/ikatyang/tree-sitter-toml — licensed under the MIT
-  License.
-
 * https://github.com/ikatyang/tree-sitter-yaml — licensed under the MIT
   License.
 

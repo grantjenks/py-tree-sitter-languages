@@ -4,7 +4,7 @@ import sys
 from tree_sitter import Language
 
 
-repos = []  # list of: (url, commit, clone directory)
+repos = []
 with open("repos.txt", "r") as file:
     for line in file:
         url, commit = line.split()

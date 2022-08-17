@@ -1,10 +1,16 @@
 import pathlib
+import sys
 
 from tree_sitter import Language, Parser
 
 
 def get_language(language):
-    binary_path = str(pathlib.Path(__file__).parent / 'languages.so')
+    if sys.platform == 'win32':
+        filename = 'languages.dll'
+    else:
+        filename = 'languages.so'
+
+    binary_path = str(pathlib.Path(__file__).parent / filename)
     language = Language(binary_path, language)
     return language
 

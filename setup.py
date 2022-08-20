@@ -22,7 +22,7 @@ setuptools.setup(
     license='Apache 2.0',
     ext_modules=cythonize('tree_sitter_languages/core.pyx', language_level='3'),
     packages=['tree_sitter_languages'],
-    package_data={'tree_sitter_languages': ['languages.so']},
+    package_data={'tree_sitter_languages': ['languages.so', 'languages.dll']},
     install_requires=['tree-sitter'],
     project_urls={
         'Documentation': 'https://github.com/grantjenks/py-tree-sitter-languages',

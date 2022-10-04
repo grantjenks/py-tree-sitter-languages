@@ -25,6 +25,7 @@ https://github.com/tree-sitter/tree-sitter-css a03f1d2d1dfbf6f8e0fdca5f9ff030228
 https://github.com/tree-sitter/tree-sitter-embedded-template 1a538da253d73f896b9f6c0c7d79cda58791ac5c
 https://github.com/tree-sitter/tree-sitter-go aeb2f33b366fd78d5789ff104956ce23508b85db
 https://github.com/tree-sitter/tree-sitter-haskell cf394604ae2ec2a5e65b1afbc7dea21258ede403
+https://github.com/mitchellh/tree-sitter-hcl bdc2ee0cbd19d22f8a1529e5c9d099029573c931
 https://github.com/tree-sitter/tree-sitter-html 29f53d8f4f2335e61bf6418ab8958dac3282077a
 https://github.com/tree-sitter/tree-sitter-java ac14b4b1884102839455d32543ab6d53ae089ab7
 https://github.com/tree-sitter/tree-sitter-javascript 35565430231d0c15b748b0c9de36b247d8780f75

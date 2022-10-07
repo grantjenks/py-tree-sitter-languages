@@ -269,6 +269,9 @@ form:
 
 * https://github.com/tree-sitter/tree-sitter-haskell — licensed under the MIT
   License.
+  
+* https://github.com/mitchellh/tree-sitter-hcl - licensed under the MIT License.
+
 
 * https://github.com/tree-sitter/tree-sitter-html — licensed under the MIT
   License.
@@ -328,7 +331,5 @@ form:
   License.
 
 * https://github.com/stsewd/tree-sitter-rst - licensed under the MIT License.
-
-* https://github.com/mitchellh/tree-sitter-hcl - licensed under the MIT License.
 
 .. _`tree-sitter`: https://tree-sitter.github.io/

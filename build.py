@@ -16,11 +16,14 @@ with open("repos.txt", "r") as file:
 if os.path.isdir("vendor") and len(os.listdir("vendor")) == len(repos):
     print(f"{sys.argv[0]}: Language repositories have been cloned already.")
 else:
-    os.mkdir("vendor")
+    os.makedirs("vendor", exist_ok=True)
     for url, commit, clone_directory in repos:
         print()
         print(f"{sys.argv[0]}: Cloning: {url} (commit {commit}) --> {clone_directory}")
         print()
+
+        if os.path.exists(clone_directory):
+            continue
 
         # https://serverfault.com/a/713065
         os.mkdir(clone_directory)
@@ -57,6 +60,7 @@ Language.build_library(
         'vendor/tree-sitter-go-mod',
         'vendor/tree-sitter-hack',
         'vendor/tree-sitter-haskell',
+        'vendor/tree-sitter-hcl',
         'vendor/tree-sitter-html',
         'vendor/tree-sitter-java',
         'vendor/tree-sitter-javascript',
@@ -80,14 +84,10 @@ Language.build_library(
         'vendor/tree-sitter-rust',
         'vendor/tree-sitter-scala',
         'vendor/tree-sitter-sql',
-        'vendor/tree-sitter-swift',
         'vendor/tree-sitter-toml',
         'vendor/tree-sitter-tsq',
         'vendor/tree-sitter-typescript/tsx',
         'vendor/tree-sitter-typescript/typescript',
-        'vendor/tree-sitter-verilog',
         'vendor/tree-sitter-yaml',
-        'vendor/tree-sitter-hcl',
-
     ]
 )

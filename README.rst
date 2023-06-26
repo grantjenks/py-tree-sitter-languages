@@ -312,9 +312,6 @@ form:
 * https://github.com/tree-sitter/tree-sitter-scala — licensed under the MIT
   License.
 
-* https://github.com/tree-sitter/tree-sitter-swift — licensed under the MIT
-  License.
-
 * https://github.com/tree-sitter/tree-sitter-toml — licensed under the MIT
   License.
 
@@ -323,9 +320,6 @@ form:
 
 * https://github.com/tree-sitter/tree-sitter-typescript — licensed under the
   MIT License.
-
-* https://github.com/tree-sitter/tree-sitter-verilog — licensed under the MIT
-  License.
 
 * https://github.com/stsewd/tree-sitter-rst - licensed under the MIT License.
 

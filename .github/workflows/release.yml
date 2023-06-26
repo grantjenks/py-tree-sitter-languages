@@ -30,7 +30,7 @@ jobs:
         env:
           CIBW_BEFORE_BUILD: pip install cython==0.29.32 && pip install -e . && python build.py
           CIBW_TEST_REQUIRES: pytest
-          CIBW_TEST_COMMAND: pytest {package}/tests
+          CIBW_TEST_COMMAND: pytest --showlocals {package}/tests
           CIBW_SKIP: pp*
           CIBW_ARCHS_MACOS: x86_64 arm64
 

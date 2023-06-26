@@ -57,6 +57,7 @@ Language.build_library(
         'vendor/tree-sitter-go-mod',
         'vendor/tree-sitter-hack',
         'vendor/tree-sitter-haskell',
+        'vendor/tree-sitter-hcl',
         'vendor/tree-sitter-html',
         'vendor/tree-sitter-java',
         'vendor/tree-sitter-javascript',
@@ -87,7 +88,5 @@ Language.build_library(
         'vendor/tree-sitter-typescript/typescript',
         'vendor/tree-sitter-verilog',
         'vendor/tree-sitter-yaml',
-        'vendor/tree-sitter-hcl',
-
     ]
 )

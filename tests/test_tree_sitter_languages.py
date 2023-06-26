@@ -45,7 +45,6 @@ LANGUAGES = [
     'toml',
     'tsq',
     'typescript',
-    'verilog',
     'yaml',
 ]
 

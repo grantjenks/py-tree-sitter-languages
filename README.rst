@@ -321,9 +321,6 @@ form:
 * https://github.com/tree-sitter/tree-sitter-typescript — licensed under the
   MIT License.
 
-* https://github.com/tree-sitter/tree-sitter-verilog — licensed under the MIT
-  License.
-
 * https://github.com/stsewd/tree-sitter-rst - licensed under the MIT License.
 
 * https://github.com/mitchellh/tree-sitter-hcl - licensed under the MIT License.

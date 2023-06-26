@@ -88,7 +88,6 @@ Language.build_library(
         'vendor/tree-sitter-tsq',
         'vendor/tree-sitter-typescript/tsx',
         'vendor/tree-sitter-typescript/typescript',
-        'vendor/tree-sitter-verilog',
         'vendor/tree-sitter-yaml',
     ]
 )

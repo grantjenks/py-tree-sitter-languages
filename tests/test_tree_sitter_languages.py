@@ -1,5 +1,55 @@
 from tree_sitter_languages import get_language, get_parser
 
+LANGUAGES = [
+    'bash',
+    'c',
+    'c_sharp',  # c-sharp
+    'commonlisp',
+    'cpp',
+    'css',
+    'dockerfile',
+    'dot',
+    'elisp',
+    'elixir',
+    'elm',
+    'embedded_template',  # embedded-template
+    'erlang',
+    'go',
+    'gomod',  # go-mod
+    'hack',
+    'haskell',
+    'hcl',
+    'html',
+    'java',
+    'javascript',
+    'jsdoc',
+    'json',
+    'julia',
+    'kotlin',
+    'lua',
+    'make',
+    'markdown',
+    'objc',
+    'ocaml',
+    'perl',
+    'php',
+    'python',
+    'ql',
+    'r',
+    'regex',
+    'rst',
+    'ruby',
+    'rust',
+    'scala',
+    'sql',
+    'swift',
+    'toml',
+    'tsq',
+    'typescript',
+    'verilog',
+    'yaml',
+]
+
 PYTHON_CODE = """
     def foo():
         if bar:
@@ -26,3 +76,15 @@ def test_python():
     assert captures[0][0].text.decode() == 'foo'
     assert captures[1][1] == "function.call"
     assert captures[1][0].text.decode() == 'baz'
+
+
+def test_get_parser():
+    for language in LANGUAGES:
+        parser = get_parser(language)
+        assert parser
+
+
+def test_get_language():
+    for language in LANGUAGES:
+        language = get_language(language)
+        assert language

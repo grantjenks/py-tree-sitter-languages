@@ -84,7 +84,6 @@ Language.build_library(
         'vendor/tree-sitter-rust',
         'vendor/tree-sitter-scala',
         'vendor/tree-sitter-sql',
-        'vendor/tree-sitter-swift',
         'vendor/tree-sitter-toml',
         'vendor/tree-sitter-tsq',
         'vendor/tree-sitter-typescript/tsx',

@@ -329,5 +329,7 @@ form:
 
 * https://github.com/stsewd/tree-sitter-rst - licensed under the MIT License.
 
+* https://github.com/mitchellh/tree-sitter-hcl - licensed under the MIT License.
+
 
 .. _`tree-sitter`: https://tree-sitter.github.io/

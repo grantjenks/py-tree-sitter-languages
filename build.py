@@ -75,6 +75,7 @@ Language.build_library(
         'vendor/tree-sitter-ql',
         'vendor/tree-sitter-r',
         'vendor/tree-sitter-regex',
+        'vendor/tree-sitter-rst',
         'vendor/tree-sitter-ruby',
         'vendor/tree-sitter-rust',
         'vendor/tree-sitter-scala',

@@ -43,3 +43,4 @@ https://github.com/tree-sitter/tree-sitter-scala 140c96cf398693189d4e50f76d19ddf
 https://github.com/tree-sitter/tree-sitter-toml 342d9be207c2dba869b9967124c679b5e6fd0ebe
 https://github.com/tree-sitter/tree-sitter-tsq b665659d3238e6036e22ed0e24935e60efb39415
 https://github.com/tree-sitter/tree-sitter-typescript 49e82b1bce36d6046df911901684cd66b5345d58
+https://github.com/dhcmrlchtdj/tree-sitter-sqlite 993be0a91c0c90b0cc7799e6ff65922390e2cefe

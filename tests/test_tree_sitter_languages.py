@@ -42,6 +42,7 @@ LANGUAGES = [
     'rust',
     'scala',
     'sql',
+    'sqlite',
     'toml',
     'tsq',
     'typescript',

@@ -4,6 +4,7 @@ https://github.com/Wilfred/tree-sitter-elisp 4b0e4a3891337514126ec72c7af394c0ff2
 https://github.com/alemuller/tree-sitter-make a4b9187417d6be349ee5fd4b6e77b4172c6827dd
 https://github.com/camdencheek/tree-sitter-dockerfile 25c71d6a24cdba8f0c74ef40d4d2d93defd7e196
 https://github.com/camdencheek/tree-sitter-go-mod 4a65743dbc2bb3094114dd2b43da03c820aa5234
+https://github.com/dhcmrlchtdj/tree-sitter-sqlite 993be0a91c0c90b0cc7799e6ff65922390e2cefe
 https://github.com/elixir-lang/tree-sitter-elixir 05e3631c6a0701c1fa518b0fee7be95a2ceef5e2
 https://github.com/elm-tooling/tree-sitter-elm 0aecfbf69f0c9bcdfada0f6f2c5398235c23949f
 https://github.com/fwcd/tree-sitter-kotlin a4f71eb9b8c9b19ded3e0e9470be4b1b77c2b569
@@ -43,4 +44,3 @@ https://github.com/tree-sitter/tree-sitter-scala 140c96cf398693189d4e50f76d19ddf
 https://github.com/tree-sitter/tree-sitter-toml 342d9be207c2dba869b9967124c679b5e6fd0ebe
 https://github.com/tree-sitter/tree-sitter-tsq b665659d3238e6036e22ed0e24935e60efb39415
 https://github.com/tree-sitter/tree-sitter-typescript 49e82b1bce36d6046df911901684cd66b5345d58
-https://github.com/dhcmrlchtdj/tree-sitter-sqlite 993be0a91c0c90b0cc7799e6ff65922390e2cefe

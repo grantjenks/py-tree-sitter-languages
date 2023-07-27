@@ -1,4 +1,8 @@
+import json
 import os
+import glob
+import pprint
+import re
 import subprocess
 import sys
 from tree_sitter import Language
@@ -32,7 +36,40 @@ else:
         subprocess.check_call(["git", "fetch", "--depth=1", "origin", commit], cwd=clone_directory)
         subprocess.check_call(["git", "checkout", commit], cwd=clone_directory)
 
-print()
+
+langs = {}
+for _, _, clone_directory in repos:
+    keys = []
+    for parser_path in glob.glob(os.path.join(clone_directory, "**/parser.c"), recursive=True):
+        with open(parser_path, 'r') as parser:
+            for line in parser:
+                if line.startswith("extern const TSLanguage *tree_sitter_"):
+                    key = re.search(r"tree_sitter_(.+?)\(", line).group(1)
+                    keys.append(key)
+    package_json_path = os.path.join(clone_directory, 'package.json')
+    if not os.path.isfile(package_json_path):
+        for key in keys:
+            langs[key] = {}
+        continue
+    with open(package_json_path, 'r') as file:
+        package_json = json.load(file)
+        if 'tree-sitter' not in package_json:
+            for key in keys:
+                langs[key] = {}
+            continue
+        for entry in package_json['tree-sitter']:
+            if len(keys) == 1:
+                langs[keys[0]] = entry
+                continue
+            for key in keys:
+                if entry['scope'].endswith(key) or ('path' in entry and entry['path'] == key):
+                    langs[key] = entry
+                    break
+
+with open('tree_sitter_languages/generated.pyx', 'w') as file:
+    file.write('compiled_languages = ')
+    pprint.pprint(langs, stream=file)
+
 
 if sys.platform == "win32":
     languages_filename = "tree_sitter_languages\\languages.dll"

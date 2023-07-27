@@ -97,5 +97,6 @@ def test_generated():
 def test_get_language_by_filename():
     for filename, lang in {
         'file.sh': 'bash',
+        'test.go': 'go',
     }.items():
         assert get_language_by_filename(filename).name == get_language(lang).name

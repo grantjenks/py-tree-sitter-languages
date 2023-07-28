@@ -17,7 +17,7 @@ def get_language(language):
     return language
 
 def get_language_for_file(file_name, file_contents=None):
-    name = Language.lookup_language_name_by_file(index, file_name, file_contents)
+    name = Language.lookup_language_name_for_file(index, file_name, file_contents)
     return get_language(name) if name is not None else None
 
 def get_parser(language):

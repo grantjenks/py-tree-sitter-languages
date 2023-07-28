@@ -1,5 +1,5 @@
 from tree_sitter_languages import get_language, get_parser, get_language_for_file
-from tree_sitter_languages.generated import compiled_languages
+from tree_sitter_languages.generated import index
 
 LANGUAGES = [
     'bash',
@@ -92,7 +92,7 @@ def test_get_language():
 
 def test_generated():
     for language in LANGUAGES:
-        assert compiled_languages[language] is not None
+        assert index[language] is not None
 
 def test_get_language_for_file():
     for filename, lang in {

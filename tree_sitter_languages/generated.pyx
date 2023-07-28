@@ -1,4 +1,4 @@
-compiled_languages = {'bash': {'file-types': ['sh', 'bash', 'zsh'], 'scope': 'source.bash'},
+index = {'bash': {'file-types': ['sh', 'bash', 'zsh'], 'scope': 'source.bash'},
  'c': {'file-types': ['c', 'h'], 'scope': 'source.c'},
  'c_sharp': {'file-types': ['cs'], 'scope': 'source.cs'},
  'commonlisp': {},

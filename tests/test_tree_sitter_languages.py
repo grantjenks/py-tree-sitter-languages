@@ -1,4 +1,4 @@
-from tree_sitter_languages import get_language, get_parser, get_language_by_filename
+from tree_sitter_languages import get_language, get_parser, get_language_for_file
 from tree_sitter_languages.generated import compiled_languages
 
 LANGUAGES = [
@@ -94,9 +94,9 @@ def test_generated():
     for language in LANGUAGES:
         assert compiled_languages[language] is not None
 
-def test_get_language_by_filename():
+def test_get_language_for_file():
     for filename, lang in {
         'file.sh': 'bash',
         'test.go': 'go',
     }.items():
-        assert get_language_by_filename(filename).name == get_language(lang).name
+        assert get_language_for_file(filename).name == get_language(lang).name

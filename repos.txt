@@ -1,6 +1,7 @@
 https://github.com/AbstractMachinesLab/tree-sitter-erlang fab680273af1a8f5cc0c3a0c62cbf5b1bea71f39
 https://github.com/Azganoth/tree-sitter-lua 6b02dfd7f07f36c223270e97eb0adf84e15a4cef
 https://github.com/Wilfred/tree-sitter-elisp 4b0e4a3891337514126ec72c7af394c0ff2cf48c
+https://github.com/ZedThree/tree-sitter-fixed-form-fortran 3142d317c73de80882beb95cc431af7eb6c28c51
 https://github.com/alemuller/tree-sitter-make a4b9187417d6be349ee5fd4b6e77b4172c6827dd
 https://github.com/camdencheek/tree-sitter-dockerfile 25c71d6a24cdba8f0c74ef40d4d2d93defd7e196
 https://github.com/camdencheek/tree-sitter-go-mod 4a65743dbc2bb3094114dd2b43da03c820aa5234
@@ -17,6 +18,7 @@ https://github.com/mitchellh/tree-sitter-hcl bdc2ee0cbd19d22f8a1529e5c9d09902957
 https://github.com/r-lib/tree-sitter-r 205c2877af33a814386ff275031f88400a011397
 https://github.com/rydesun/tree-sitter-dot 917230743aa10f45a408fea2ddb54bbbf5fbe7b7
 https://github.com/slackhq/tree-sitter-hack b7bd6928532ada34dddb1dece4a158ab62c6e783
+https://github.com/stadelmanma/tree-sitter-fortran f73d473e3530862dee7cbb38520f28824e7804f6
 https://github.com/stsewd/tree-sitter-rst 25e6328872ac3a764ba8b926aea12719741103f1
 https://github.com/theHamsta/tree-sitter-commonlisp c7e814975ab0d0d04333d1f32391c41180c58919
 https://github.com/tree-sitter/tree-sitter-bash 275effdfc0edce774acf7d481f9ea195c6c403cd

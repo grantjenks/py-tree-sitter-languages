@@ -328,4 +328,10 @@ form:
 
 * https://github.com/mitchellh/tree-sitter-hcl - licensed under the MIT License.
 
+* https://github.com/stadelmanma/tree-sitter-fortran - licensed under the MIT
+  License.
+
+* https://github.com/stadelmanma/tree-sitter-fixed-form-fortran - licensed under
+  the MIT License.
+
 .. _`tree-sitter`: https://tree-sitter.github.io/

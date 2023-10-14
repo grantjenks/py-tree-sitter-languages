@@ -56,6 +56,8 @@ Language.build_library(
         'vendor/tree-sitter-elm',
         'vendor/tree-sitter-embedded-template',
         'vendor/tree-sitter-erlang',
+        'vendor/tree-sitter-fixed-form-fortran',
+        'vendor/tree-sitter-fortran',
         'vendor/tree-sitter-go',
         'vendor/tree-sitter-go-mod',
         'vendor/tree-sitter-hack',

@@ -14,6 +14,8 @@ LANGUAGES = [
     'elm',
     'embedded_template',  # embedded-template
     'erlang',
+    'fixed_form_fortran',
+    'fortran',
     'go',
     'gomod',  # go-mod
     'hack',

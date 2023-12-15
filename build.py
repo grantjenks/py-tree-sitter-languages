@@ -79,6 +79,7 @@ Language.build_library(
         'vendor/tree-sitter-php',
         'vendor/tree-sitter-python',
         'vendor/tree-sitter-ql',
+        'vendor/tree-sitter-query',
         'vendor/tree-sitter-r',
         'vendor/tree-sitter-regex',
         'vendor/tree-sitter-rst',

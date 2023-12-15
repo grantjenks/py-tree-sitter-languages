@@ -37,6 +37,7 @@ LANGUAGES = [
     'php',
     'python',
     'ql',
+    'query'
     'r',
     'regex',
     'rst',

@@ -15,6 +15,7 @@ https://github.com/ikatyang/tree-sitter-yaml 0e36bed171768908f331ff7dff9d956bae0
 https://github.com/jiyee/tree-sitter-objc afec0de5a32d5894070b67932d6ff09e4f7c5879
 https://github.com/m-novikov/tree-sitter-sql 218b672499729ef71e4d66a949e4a1614488aeaa
 https://github.com/mitchellh/tree-sitter-hcl bdc2ee0cbd19d22f8a1529e5c9d099029573c931
+https://github.com/nvim-treesitter/tree-sitter-query 3a9808b22742d5bd906ef5d1a562f2f1ae57406d
 https://github.com/r-lib/tree-sitter-r 205c2877af33a814386ff275031f88400a011397
 https://github.com/rydesun/tree-sitter-dot 917230743aa10f45a408fea2ddb54bbbf5fbe7b7
 https://github.com/slackhq/tree-sitter-hack b7bd6928532ada34dddb1dece4a158ab62c6e783

@@ -236,6 +236,9 @@ form:
 * https://github.com/m-novikov/tree-sitter-sql — licensed under the MIT
   License.
 
+  https://github.com/nvim-treesitter/tree-sitter-query - licensed under the
+  Apache License.
+
 * https://github.com/r-lib/tree-sitter-r — licensed under the MIT License.
 
 * https://github.com/rydesun/tree-sitter-dot — licensed under the MIT License.

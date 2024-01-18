@@ -14,13 +14,13 @@ jobs:
         os: [ubuntu-20.04, macos-11, windows-2022]
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           submodules: true
 
-      - uses: actions/setup-python@v3
+      - uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: "3.11"
 
       - name: Set up QEMU
         if: runner.os == 'Linux'
@@ -41,7 +41,7 @@ jobs:
           CIBW_ARCHS_MACOS: x86_64 arm64
           CIBW_ARCHS_LINUX: auto aarch64
 
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v4
         with:
           name: wheelhouse
           path: ./wheelhouse/*.whl
@@ -53,22 +53,22 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-      with:
-        submodules: true
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
 
-    - name: Stage wheels
-      uses: actions/download-artifact@v2
-      with:
-        name: wheelhouse
-        path: wheelhouse
-    - run: |
-        mkdir dist
-        mv -v wheelhouse/* dist/
-        ls -l dist/
+      - name: Stage wheels
+        uses: actions/download-artifact@v4
+        with:
+          name: wheelhouse
+          path: wheelhouse
+      - run: |
+          mkdir dist
+          mv -v wheelhouse/* dist/
+          ls -l dist/
 
-    - name: Publish package
-      uses: pypa/gh-action-pypi-publish@release/v1
-      with:
-       user: __token__
-       password: ${{ secrets.PYPI_API_TOKEN }}
+      - name: Publish package
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          user: __token__
+          password: ${{ secrets.PYPI_API_TOKEN }}

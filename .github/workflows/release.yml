@@ -29,12 +29,12 @@ jobs:
           platforms: all
 
       - name: Install cibuildwheel
-        run: python -m pip install cibuildwheel==2.16.1
+        run: python -m pip install cibuildwheel==2.16.2
 
       - name: Build wheels
         run: python -m cibuildwheel --output-dir wheelhouse
         env:
-          CIBW_BEFORE_BUILD: pip install cython==3.0.2 && pip install -e . && python build.py
+          CIBW_BEFORE_BUILD: pip install cython==3.0.8 && pip install -e . && python build.py
           CIBW_TEST_REQUIRES: pytest
           CIBW_TEST_COMMAND: pytest --showlocals {package}/tests
           CIBW_SKIP: "{cp36*,cp37*,pp*}"

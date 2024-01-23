@@ -196,7 +196,7 @@ form:
 
 * https://github.com/tree-sitter/tree-sitter — licensed under the MIT License.
 
-* https://github.com/AbstractMachinesLab/tree-sitter-erlang — licensed under
+* https://github.com/WhatsApp/tree-sitter-erlang — licensed under
   the Apache License, Version 2.0.
 
 * https://github.com/Azganoth/tree-sitter-lua — licensed under the MIT
@@ -326,7 +326,8 @@ form:
 
 * https://github.com/stsewd/tree-sitter-rst - licensed under the MIT License.
 
-* https://github.com/mitchellh/tree-sitter-hcl - licensed under the MIT License.
+* https://github.com/MichaHoffmann/tree-sitter-hcl - licensed under the
+  Apache License, Version 2.0.
 
 * https://github.com/stadelmanma/tree-sitter-fortran - licensed under the MIT
   License.

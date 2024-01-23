@@ -1,4 +1,4 @@
-https://github.com/AbstractMachinesLab/tree-sitter-erlang 3a9c769444f08bbccce03845270efac0c641c5e7
+https://github.com/WhatsApp/tree-sitter-erlang 54b6f814f43c4eac81eeedefaa7cc8762fec6683
 https://github.com/Azganoth/tree-sitter-lua 6b02dfd7f07f36c223270e97eb0adf84e15a4cef
 https://github.com/Wilfred/tree-sitter-elisp e5524fdccf8c22fc726474a910e4ade976dfc7bb
 https://github.com/ZedThree/tree-sitter-fixed-form-fortran e80ef5afc04b6845db778d05025f2a1b76969ad9

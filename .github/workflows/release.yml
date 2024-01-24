@@ -37,7 +37,7 @@ jobs:
           CIBW_BEFORE_BUILD: pip install cython==3.0.8 && pip install -e . && python build.py
           CIBW_TEST_REQUIRES: pytest
           CIBW_TEST_COMMAND: pytest --showlocals {package}/tests
-          CIBW_SKIP: "{cp36*,cp37*,pp*}"
+          CIBW_SKIP: "{cp36**,pp*}"
           CIBW_ARCHS_MACOS: x86_64 arm64
           CIBW_ARCHS_LINUX: auto aarch64
           CIBW_BUILD_VERBOSITY: 3

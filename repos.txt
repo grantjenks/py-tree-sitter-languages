@@ -19,7 +19,7 @@ https://github.com/r-lib/tree-sitter-r c55f8b4dfaa32c80ddef6c0ac0e79b05cb0cbf57
 https://github.com/rydesun/tree-sitter-dot 917230743aa10f45a408fea2ddb54bbbf5fbe7b7
 https://github.com/slackhq/tree-sitter-hack fca1e294f6dce8ec5659233a6a21f5bd0ed5b4f2
 https://github.com/stadelmanma/tree-sitter-fortran f73d473e3530862dee7cbb38520f28824e7804f6
-https://github.com/stsewd/tree-sitter-rst 25e6328872ac3a764ba8b926aea12719741103f1
+https://github.com/stsewd/tree-sitter-rst 3ba9eb9b5a47aadb1f2356a3cab0dd3d2bd00b4b
 https://github.com/theHamsta/tree-sitter-commonlisp c7e814975ab0d0d04333d1f32391c41180c58919
 https://github.com/tree-sitter/tree-sitter-bash f7239f638d3dc16762563a9027faeee518ce1bd9
 https://github.com/tree-sitter/tree-sitter-c 34f4c7e751f4d661be3e23682fe2631d6615141d

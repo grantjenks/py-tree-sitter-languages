@@ -24,13 +24,13 @@ Install
 Source installs are not supported. To see how the binary wheels are built, look
 at:
 
-1. setup.py — Python package setup.
+1. `setup.py` — Python package setup.
 
-2. repos.txt — Text file that contains a list of included language repositories and their commit hashes.
+2. `repos.txt` — Text file that contains a list of included language repositories and their commit hashes.
 
-3. build.py — Python script to download and build the language repositories.
+3. `build.py` — Python script to download and build the language repositories.
 
-4. .github/workflows/release.yml — GitHub action to invoke `cibuildwheel`_ and
+4. `.github/workflows/release.yml` — GitHub action to invoke `cibuildwheel`_ and
    release to PyPI.
 
 .. _`cibuildwheel`: https://github.com/pypa/cibuildwheel
@@ -39,7 +39,7 @@ at:
 Usage
 =====
 
-::
+.. code:: python
 
    from tree_sitter_languages import get_language, get_parser
 
@@ -60,7 +60,9 @@ Demo
 
 Want to know something crazy? Python lacks multi-line comments. Whhaaa!?!
 
-It's really not such a big deal. Instead of writing::
+It's really not such a big deal. Instead of writing
+
+.. code:: python
 
    """
    My awesome
@@ -68,7 +70,9 @@ It's really not such a big deal. Instead of writing::
    comment.
    """
 
-Simply write::
+Simply write
+
+.. code:: python
 
    # My awesome
    # multi-line
@@ -79,7 +83,9 @@ sequence. Amazing!
 
 Now, how to find all the strings being used as comments?
 
-Start with some example Python code::
+Start with some example Python code
+
+.. code:: python
 
    example = """
    #!shebang
@@ -124,7 +130,9 @@ Notice a couple things:
 Creating a regular expression to capture the phony string comments would be
 exceedingly difficult!
 
-Enter `tree-sitter`_::
+Enter `tree-sitter`_
+
+.. code:: python
 
    from tree_sitter_languages import get_language, get_parser
 
@@ -132,7 +140,9 @@ Enter `tree-sitter`_::
    parser = get_parser('python')
 
 Tree-sitter creates an abstract syntax tree (actually, a `concrete syntax
-tree`_) and supports queries::
+tree`_) and supports queries
+
+.. code:: python
 
    tree = parser.parse(example.encode())
    node = tree.root_node
@@ -140,7 +150,9 @@ tree`_) and supports queries::
 
 .. _`concrete syntax tree`: https://stackoverflow.com/q/1888854/232571
 
-Look for statements that are a single string expression::
+Look for statements that are a single string expression
+
+.. code:: python
 
    stmt_str_pattern = '(expression_statement (string)) @stmt_str'
    stmt_str_query = language.query(stmt_str_pattern)
@@ -151,7 +163,9 @@ Look for statements that are a single string expression::
    print(stmt_str_points)
 
 Now, find those statement string expressions that are actually module, class,
-or function docstrings::
+or function docstrings
+
+.. code:: python
 
    doc_str_pattern = """
        (module . (comment)* . (expression_statement (string)) @module_doc_str)
@@ -169,7 +183,9 @@ or function docstrings::
    )
 
 With the set of string expression statements and the set of docstring
-statements, the locations of all phony string comments is::
+statements, the locations of all phony string comments is
+
+.. code:: python
 
    comment_strs = stmt_str_points - doc_str_points
    print(sorted(comment_strs))

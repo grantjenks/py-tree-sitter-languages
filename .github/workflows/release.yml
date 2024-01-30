@@ -42,9 +42,8 @@ jobs:
           CIBW_ARCHS_LINUX: auto aarch64
           CIBW_BUILD_VERBOSITY: 3
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v2
         with:
-          overwrite: true
           name: wheelhouse
           path: ./wheelhouse/*.whl
 

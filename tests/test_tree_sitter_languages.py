@@ -16,6 +16,7 @@ LANGUAGES = [
     'erlang',
     'fixed_form_fortran',
     'fortran',
+    'github_action',  # github-action
     'go',
     'gomod',  # go-mod
     'hack',

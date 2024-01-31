@@ -32,7 +32,7 @@ jobs:
         run: python -m pip install cibuildwheel==2.16.2
 
       - name: Build wheels
-        run: python -m cibuildwheel --output-dir wheelhouse
+        run: python -m cibuildwheel --output-dir dist
         env:
           CIBW_BEFORE_BUILD: pip install cython==3.0.8 && pip install -e . && python build.py
           CIBW_TEST_REQUIRES: pytest
@@ -42,10 +42,10 @@ jobs:
           CIBW_ARCHS_LINUX: auto aarch64
           CIBW_BUILD_VERBOSITY: 3
 
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v4
         with:
-          name: wheelhouse
-          path: ./wheelhouse/*.whl
+          name: wheelhouse-${{ matrix.os }}
+          path: dist
 
   upload:
     # Skip this step on pull requests. Run only when pushing a version tag.
@@ -61,11 +61,10 @@ jobs:
       - name: Stage wheels
         uses: actions/download-artifact@v4
         with:
-          name: wheelhouse
-          path: wheelhouse
+          pattern: wheelhouse-*
+          merge-multiple: true
+          path: dist
       - run: |
-          mkdir dist
-          mv -v wheelhouse/* dist/
           ls -l dist/
 
       - name: Publish package

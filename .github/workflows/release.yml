@@ -131,25 +131,25 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
-      with:
-        submodules: true
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
 
-    - name: Stage wheels
-      uses: actions/download-artifact@v4
-      with:
-        pattern: wheelhouse-*
-        path: wheelhouse
-        merge-multiple: true
+      - name: Stage wheels
+        uses: actions/download-artifact@v4
+        with:
+          pattern: wheelhouse-*
+          path: wheelhouse
+          merge-multiple: true
 
-    - name: Move wheels to dist folder
-      run: |
-        mkdir dist
-        mv -v wheelhouse/* dist/
-        ls -l dist/
+      - name: Move wheels to dist folder
+        run: |
+          mkdir dist
+          mv -v wheelhouse/* dist/
+          ls -l dist/
 
-    - name: Publish package
-      uses: pypa/gh-action-pypi-publish@release/v1
-      with:
-       user: __token__
-       password: ${{ secrets.PYPI_API_TOKEN }}
+      - name: Publish package
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          user: __token__
+          password: ${{ secrets.PYPI_API_TOKEN }}

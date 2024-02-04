@@ -43,7 +43,8 @@ else:
         future.result()
 
 
-print()
+# flush stdout to avoid buffering
+sys.stdout.flush()
 
 if sys.platform == "win32":
     languages_filename = "tree_sitter_languages\\languages.dll"

@@ -1,4 +1,5 @@
-from tree_sitter_languages import get_language, get_parser
+from tree_sitter_languages import get_language, get_parser, get_language_for_file
+from tree_sitter_languages.generated import index
 
 LANGUAGES = [
     'bash',
@@ -47,6 +48,7 @@ LANGUAGES = [
     'sqlite',
     'toml',
     'tsq',
+    'tsx',
     'typescript',
     'yaml',
 ]
@@ -89,3 +91,14 @@ def test_get_language():
     for language in LANGUAGES:
         language = get_language(language)
         assert language
+
+def test_generated():
+    for language in LANGUAGES:
+        assert index[language] is not None
+
+def test_get_language_for_file():
+    for filename, lang in {
+        'file.sh': 'bash',
+        'test.go': 'go',
+    }.items():
+        assert get_language_for_file(filename).name == get_language(lang).name

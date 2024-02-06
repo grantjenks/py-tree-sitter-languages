@@ -1,7 +1,7 @@
 """Tree Sitter with Languages
 """
 
-from .core import get_language, get_parser
+from .core import get_language, get_parser, get_language_for_file
 
 __version__ = '1.10.2'
 __title__ = 'tree_sitter_languages'

@@ -77,6 +77,7 @@ Language.build_library(
         'vendor/tree-sitter-ocaml/ocaml',
         'vendor/tree-sitter-perl',
         'vendor/tree-sitter-php',
+        'vendor/tree-sitter-pkl',
         'vendor/tree-sitter-python',
         'vendor/tree-sitter-ql',
         'vendor/tree-sitter-r',

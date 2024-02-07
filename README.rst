@@ -256,6 +256,9 @@ form:
 
 * https://github.com/rydesun/tree-sitter-dot — licensed under the MIT License.
 
+* https://github.com/apple/tree-sitter-pkl — licensed under the
+  Apache License, Version 2.0.
+
 * https://github.com/slackhq/tree-sitter-hack — licensed under the MIT
   License.
 

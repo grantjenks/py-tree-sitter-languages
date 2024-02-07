@@ -35,6 +35,7 @@ LANGUAGES = [
     'ocaml',
     'perl',
     'php',
+    'pkl',
     'python',
     'ql',
     'r',

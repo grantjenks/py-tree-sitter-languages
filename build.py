@@ -1,15 +1,25 @@
+import json
 import os
 import subprocess
 import sys
 from tree_sitter import Language
 
+with open("parsers.json") as f:
+    parsers = json.load(f)
+with open("lockfile.json") as f:
+    lockfile = json.load(f)
 
 repos = []
-with open("repos.txt", "r") as file:
-    for line in file:
-        url, commit = line.split()
-        clone_directory = os.path.join("vendor", url.rstrip("/").split("/")[-1])
-        repos.append((url, commit, clone_directory))
+vendors = []
+for lang, data in parsers.items():
+    url = data["install_info"]["url"]
+    commit = lockfile[lang]["revision"]
+    clone_directory = os.path.join("vendor", url.rstrip("/").split("/")[-1])
+    requires_generate_from_grammar = data["install_info"].get("requires_generate_from_grammar", False)
+    location = data["install_info"].get("location")
+    vendor = clone_directory + "/" + location if location else clone_directory
+    repos.append((url, commit, clone_directory, vendor if requires_generate_from_grammar else None))
+    vendors.append(vendor)
 
 # During the build, this script runs several times, and only needs to download
 # repositories on first time.
@@ -17,7 +27,7 @@ if os.path.isdir("vendor") and len(os.listdir("vendor")) == len(repos):
     print(f"{sys.argv[0]}: Language repositories have been cloned already.")
 else:
     os.makedirs("vendor", exist_ok=True)
-    for url, commit, clone_directory in repos:
+    for url, commit, clone_directory, vendor in repos:
         print()
         print(f"{sys.argv[0]}: Cloning: {url} (commit {commit}) --> {clone_directory}")
         print()
@@ -31,6 +41,8 @@ else:
         subprocess.check_call(["git", "remote", "add", "origin", url], cwd=clone_directory)
         subprocess.check_call(["git", "fetch", "--depth=1", "origin", commit], cwd=clone_directory)
         subprocess.check_call(["git", "checkout", commit], cwd=clone_directory)
+        if vendor:
+            subprocess.check_call(["tree-sitter", "generate"], cwd=vendor)
 
 print()
 
@@ -42,55 +54,5 @@ else:
 print(f"{sys.argv[0]}: Building", languages_filename)
 Language.build_library(
     languages_filename,
-    [
-        'vendor/tree-sitter-bash',
-        'vendor/tree-sitter-c',
-        'vendor/tree-sitter-c-sharp',
-        'vendor/tree-sitter-commonlisp',
-        'vendor/tree-sitter-cpp',
-        'vendor/tree-sitter-css',
-        'vendor/tree-sitter-dockerfile',
-        'vendor/tree-sitter-dot',
-        'vendor/tree-sitter-elisp',
-        'vendor/tree-sitter-elixir',
-        'vendor/tree-sitter-elm',
-        'vendor/tree-sitter-embedded-template',
-        'vendor/tree-sitter-erlang',
-        'vendor/tree-sitter-fixed-form-fortran',
-        'vendor/tree-sitter-fortran',
-        'vendor/tree-sitter-go',
-        'vendor/tree-sitter-go-mod',
-        'vendor/tree-sitter-hack',
-        'vendor/tree-sitter-haskell',
-        'vendor/tree-sitter-hcl',
-        'vendor/tree-sitter-html',
-        'vendor/tree-sitter-java',
-        'vendor/tree-sitter-javascript',
-        'vendor/tree-sitter-jsdoc',
-        'vendor/tree-sitter-json',
-        'vendor/tree-sitter-julia',
-        'vendor/tree-sitter-kotlin',
-        'vendor/tree-sitter-lua',
-        'vendor/tree-sitter-make',
-        'vendor/tree-sitter-markdown',
-        'vendor/tree-sitter-objc',
-        'vendor/tree-sitter-ocaml/ocaml',
-        'vendor/tree-sitter-perl',
-        'vendor/tree-sitter-php',
-        'vendor/tree-sitter-python',
-        'vendor/tree-sitter-ql',
-        'vendor/tree-sitter-r',
-        'vendor/tree-sitter-regex',
-        'vendor/tree-sitter-rst',
-        'vendor/tree-sitter-ruby',
-        'vendor/tree-sitter-rust',
-        'vendor/tree-sitter-scala',
-        'vendor/tree-sitter-sql',
-        'vendor/tree-sitter-sqlite',
-        'vendor/tree-sitter-toml',
-        'vendor/tree-sitter-tsq',
-        'vendor/tree-sitter-typescript/tsx',
-        'vendor/tree-sitter-typescript/typescript',
-        'vendor/tree-sitter-yaml',
-    ]
+    vendors
 )

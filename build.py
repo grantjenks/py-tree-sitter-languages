@@ -11,7 +11,19 @@ with open("lockfile.json") as f:
 
 repos = []
 vendors = []
+# https://github.com/tree-sitter/py-tree-sitter/issues/189
+disabled_langs = [
+    "vue",  # html, angular
+    "angular",  # html
+    "purescript",  # haskell, unison
+    "unison",  # haskell
+    "terraform",  # hcl
+    "svelte",  # org
+    "beancount",  # org
+]
 for lang, data in parsers.items():
+    if lang in disabled_langs:
+        continue
     url = data["install_info"]["url"]
     commit = lockfile[lang]["revision"]
     clone_directory = os.path.join("vendor", url.rstrip("/").split("/")[-1])

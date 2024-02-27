@@ -1,8 +1,8 @@
 import os
 import subprocess
 import sys
-from tree_sitter import Language
 
+from tree_sitter import Language
 
 repos = []
 with open("repos.txt", "r") as file:
@@ -92,5 +92,6 @@ Language.build_library(
         'vendor/tree-sitter-typescript/tsx',
         'vendor/tree-sitter-typescript/typescript',
         'vendor/tree-sitter-yaml',
+        'vendor/tree-sitter-git-config',
     ]
 )

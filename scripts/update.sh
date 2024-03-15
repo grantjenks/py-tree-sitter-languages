@@ -2,6 +2,7 @@
 set -e
 cd "$(dirname "$(readlink -f "$0")")/.."
 
+# Sync the parsers and their versions with those used by nvim-treesitter
 scripts/update.lua
 cp nvim-treesitter/lockfile.json .
 git add parsers.json lockfile.json

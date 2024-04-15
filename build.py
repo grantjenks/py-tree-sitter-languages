@@ -20,6 +20,7 @@ disabled_langs = [
     "terraform",  # hcl
     "svelte",  # org
     "beancount",  # org
+    "wing", # does not have proper tree-sitter setup
 ]
 for lang, data in parsers.items():
     if lang in disabled_langs:

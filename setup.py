@@ -1,41 +1,44 @@
-import pathlib
-import re
-import setuptools
+from glob import glob
+from platform import system
 
-from Cython.Build import cythonize
+from setuptools import Extension, setup  # type: ignore
+from wheel.bdist_wheel import bdist_wheel  # type: ignore
 
-init = (pathlib.Path('tree_sitter_languages') / '__init__.py').read_text()
-match = re.search(r"^__version__ = '(.+)'$", init, re.MULTILINE)
-version = match.group(1)
 
-with open('README.rst') as reader:
-    readme = reader.read()
+class BdistWheel(bdist_wheel):
+    def get_tag(self):
+        python, abi, platform = super().get_tag()
+        if python.startswith("cp"):
+            python, abi = "cp39", "abi3"
+        return python, abi, platform
 
-setuptools.setup(
-    name='tree_sitter_languages',
-    version=version,
-    description='Binary Python wheels for all tree sitter languages.',
-    long_description=readme,
-    author='Grant Jenks',
-    author_email='contact@grantjenks.com',
-    url='https://github.com/grantjenks/py-tree-sitter-languages',
-    license='Apache 2.0',
-    ext_modules=cythonize('tree_sitter_languages/core.pyx', language_level='3'),
-    packages=['tree_sitter_languages'],
-    package_data={'tree_sitter_languages': ['languages.so', 'languages.dll']},
-    install_requires=['tree-sitter'],
-    project_urls={
-        'Documentation': 'https://github.com/grantjenks/py-tree-sitter-languages',
-        'Source': 'https://github.com/grantjenks/py-tree-sitter-languages',
-        'Tracker': 'https://github.com/grantjenks/py-tree-sitter-languages/issues',
-    },
-    classifiers=[
-        'Development Status :: 5 - Production/Stable',
-        'Intended Audience :: Developers',
-        'License :: OSI Approved :: Apache Software License',
-        'Natural Language :: English',
-        'Programming Language :: Python',
-        'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: Implementation :: CPython',
+
+sources = glob('tree_sitter_languages/repos/**/src/*.c', recursive=True)
+sources.append("tree_sitter_languages/languages.c")
+
+setup(
+    packages=["tree_sitter_languages"],
+    include_package_data=False,
+    ext_modules=[
+        Extension(
+            name="tree_sitter_languages.languages",
+            sources=sources,
+            define_macros=[
+                ("PY_SSIZE_T_CLEAN", None),
+                ("TREE_SITTER_HIDE_SYMBOLS", None),
+            ],
+            extra_compile_args=[
+                "-std=c11",
+                "-fvisibility=hidden",
+                "-Wno-cast-function-type",
+                "-Wno-unused-but-set-variable",
+                "-Werror=implicit-function-declaration",
+            ] if system() != "Windows" else [
+                "/std:c11",
+                "/wd4244",
+            ],
+            py_limited_api=True
+        )
     ],
+    cmdclass={"bdist_wheel": BdistWheel},
 )

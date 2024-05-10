@@ -1,0 +1,17 @@
+root = true
+
+[*]
+charset = utf-8
+insert_final_newline = true
+trim_trailing_whitespace = true
+max_line_length = 80
+indent_size = 4
+
+[*.rst]
+indent_size = 3
+
+[*.md]
+indent_size = 2
+
+[*.yml]
+indent_size = 2

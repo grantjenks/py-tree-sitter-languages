@@ -1,0 +1,4 @@
+include tree_sitter_languages/languages.h
+
+prune tree_sitter_languages/repos
+recursive-include tree_sitter_languages/repos src/**/*.[ch]

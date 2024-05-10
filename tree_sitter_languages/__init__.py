@@ -1,10 +1,20 @@
-"""Tree Sitter with Languages
-"""
+"""Tree-sitter languages"""
 
-from .core import get_language, get_parser
+from tree_sitter import Language, Parser
 
-__version__ = '1.10.2'
-__title__ = 'tree_sitter_languages'
-__author__ = 'Grant Jenks'
-__license__ = 'Apache 2.0'
-__copyright__ = '2022-2023, Grant Jenks'
+from . import languages
+
+
+def get_language(name: str) -> Language:
+    """Get the language with the given name."""
+    if not hasattr(languages, name):
+        raise AttributeError(f"Language not found: {name}")
+    return Language(getattr(languages, name)())
+
+
+def get_parser(language: str) -> Parser:
+    """Get a parser for the given language name."""
+    return Parser(get_language(language))
+
+
+__all__ = ["get_language", "get_parser"]

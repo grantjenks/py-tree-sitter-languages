@@ -1,0 +1,34 @@
+name: Tests
+
+on:
+  push:
+    branches: ["*"]
+    paths:
+      - tests/
+      - tree_sitter_languages/
+  pull_request:
+    paths:
+      - tests/
+      - tree_sitter_languages/
+
+jobs:
+  test:
+    name: Build & test
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Clone repos
+        working-directory: tree_sitter_languages/repos
+        shell: bash
+        run: ./clone.sh
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          cache: pip
+          python-version: "3.9"
+      - name: Install package
+        run: pip install -v -e .
+      - name: Run tests
+        run: python -munittest discover tests

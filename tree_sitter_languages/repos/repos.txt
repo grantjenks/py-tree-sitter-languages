@@ -1,0 +1,14 @@
+https://github.com/rydesun/tree-sitter-dot
+https://github.com/Wilfred/tree-sitter-elisp
+https://github.com/elm-tooling/tree-sitter-elm
+https://github.com/ZedThree/tree-sitter-fixed-form-fortran
+https://github.com/stadelmanma/tree-sitter-fortran
+https://github.com/camdencheek/tree-sitter-go-mod
+https://github.com/slackhq/tree-sitter-hack
+https://github.com/tree-sitter-grammars/tree-sitter-hcl
+https://github.com/fwcd/tree-sitter-kotlin
+https://github.com/tree-sitter-grammars/tree-sitter-make
+https://github.com/tree-sitter-grammars/tree-sitter-objc
+https://github.com/stsewd/tree-sitter-rst
+https://github.com/tree-sitter/tree-sitter-scala
+https://github.com/derekstride/tree-sitter-sql

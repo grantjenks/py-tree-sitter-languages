@@ -34,5 +34,5 @@ class TestLanguages(TestCase):
                 self.assertIsInstance(get_language(language), Language)
 
     def test_invalid_name(self):
-        self.assertRaises(AttributeError, get_language, "invalid")
-        self.assertRaises(AttributeError, get_parser, "invalid")
+        self.assertRaises(LookupError, get_language, "invalid")
+        self.assertRaises(LookupError, get_parser, "invalid")

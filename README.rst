@@ -17,6 +17,9 @@ Install
 
    pip install tree-sitter-languages
 
+
+**Note:** building from source requires ``git`` and a C compiler.
+
 Usage
 =====
 

@@ -12,10 +12,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      - name: Clone repos
-        working-directory: tree_sitter_languages/repos
-        shell: bash
-        run: ./clone.sh
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
@@ -41,10 +37,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      - name: Clone repos
-        working-directory: tree_sitter_languages/repos
-        shell: bash
-        run: ./clone.sh
       - name: Set up Python
         uses: actions/setup-python@v5
         with:

@@ -1,15 +1,18 @@
 """Tree-sitter languages"""
 
-from tree_sitter import Language, Parser
+from importlib import import_module as _import
 
-from . import languages
+from tree_sitter import Language, Parser
 
 
 def get_language(name: str) -> Language:
     """Get the language with the given name."""
-    if not hasattr(languages, name):
-        raise AttributeError(f"Language not found: {name}")
-    return Language(getattr(languages, name)())
+    try:
+        module = _import(f"._language.{name}", __package__)
+    except ModuleNotFoundError:
+        raise LookupError(f"Language not found: {name}")
+    else:
+        return Language(module.language())
 
 
 def get_parser(language: str) -> Parser:

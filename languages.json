@@ -1,0 +1,50 @@
+{
+    "dot": {
+        "repo": "https://github.com/rydesun/tree-sitter-dot"
+    },
+    "elisp": {
+        "repo": "https://github.com/Wilfred/tree-sitter-elisp"
+    },
+    "elm": {
+        "repo": "https://github.com/elm-tooling/tree-sitter-elm"
+    },
+    "fixed_form_fortran": {
+        "repo": "https://github.com/ZedThree/tree-sitter-fixed-form-fortran",
+        "branch": "f77"
+    },
+    "fortran": {
+        "repo": "https://github.com/stadelmanma/tree-sitter-fortran"
+    },
+    "gomod": {
+        "repo": "https://github.com/camdencheek/tree-sitter-go-mod"
+    },
+    "hack": {
+        "repo": "https://github.com/slackhq/tree-sitter-hack"
+    },
+    "hcl": {
+        "repo": "https://github.com/tree-sitter-grammars/tree-sitter-hcl",
+        "languages": {
+            "hcl": "",
+            "terraform": "dialects/terraform"
+        }
+    },
+    "kotlin": {
+        "repo": "https://github.com/fwcd/tree-sitter-kotlin"
+    },
+    "make": {
+        "repo": "https://github.com/tree-sitter-grammars/tree-sitter-make"
+    },
+    "objc": {
+        "repo": "https://github.com/tree-sitter-grammars/tree-sitter-objc"
+    },
+    "rst": {
+        "repo": "https://github.com/stsewd/tree-sitter-rst"
+    },
+    "scala": {
+        "repo": "https://github.com/tree-sitter/tree-sitter-scala"
+    },
+    "sql": {
+        "repo": "https://github.com/derekstride/tree-sitter-sql",
+        "branch": "gh-pages"
+    }
+}

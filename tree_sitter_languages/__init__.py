@@ -1,10 +1,23 @@
-"""Tree Sitter with Languages
-"""
+"""Tree-sitter languages"""
 
-from .core import get_language, get_parser
+from importlib import import_module as _import
 
-__version__ = '1.10.2'
-__title__ = 'tree_sitter_languages'
-__author__ = 'Grant Jenks'
-__license__ = 'Apache 2.0'
-__copyright__ = '2022-2023, Grant Jenks'
+from tree_sitter import Language, Parser
+
+
+def get_language(name: str) -> Language:
+    """Get the language with the given name."""
+    try:
+        module = _import(f"._language.{name}", __package__)
+    except ModuleNotFoundError:
+        raise LookupError(f"Language not found: {name}")
+    else:
+        return Language(module.language())
+
+
+def get_parser(language: str) -> Parser:
+    """Get a parser for the given language name."""
+    return Parser(get_language(language))
+
+
+__all__ = ["get_language", "get_parser"]

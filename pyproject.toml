@@ -1,0 +1,52 @@
+[build-system]
+requires = ["setuptools>=43", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tree-sitter-languages"
+version = "2.0.0"
+description = "Binary Python wheels for many tree-sitter languages"
+keywords = ["tree-sitter"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Natural Language :: English",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: Implementation :: CPython",
+]
+requires-python = ">=3.9"
+readme = "README.rst"
+dependencies = [
+    "tree-sitter~=0.22",
+]
+
+[[project.authors]]
+name = "Grant Jenks"
+email = "contact@grantjenks.com"
+
+[project.urls]
+Homepage = "https://github.com/grantjenks/py-tree-sitter-languages"
+
+[tool.ruff]
+target-version = "py39"
+line-length = 80
+indent-width = 4
+extend-exclude = [
+    ".github",
+    "__pycache__",
+    "setup.py",
+    "tree_sitter_languages/repos",
+]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+
+[tool.cibuildwheel]
+build-frontend = "build"
+test-command = "python -munittest discover -s {project}/tests"
+
+[tool.mypy]
+exclude = ["tree_sitter_languages/repos"]

@@ -112,7 +112,7 @@ SupportedLanguage = Literal[
 def get_language(name: SupportedLanguage) -> Language:
     """Get the language with the given name."""
     try:
-        module = import_module(name=f"._language.{name}", package=__package__)
+        module = import_module(name=f".languages.{name}", package=__package__)
         return Language(module.language())
     except ModuleNotFoundError as e:
         raise LookupError(f"Language not found: {name}") from e
@@ -123,4 +123,4 @@ def get_parser(name: SupportedLanguage) -> Parser:
     return Parser(get_language(name))
 
 
-__all__ = ["get_language", "get_parser"]
+__all__ = ["get_language", "get_parser", "SupportedLanguage"]

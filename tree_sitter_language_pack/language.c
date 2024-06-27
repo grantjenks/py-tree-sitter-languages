@@ -11,31 +11,33 @@ typedef struct TSLanguage TSLanguage;
 #define _cat(a, b) a##b
 #define cat(a, b) _cat(a, b)
 
-#define TS_LANGUAGE_FUNC cat(tree_sitter_, TS_LANGUAGE_NAME)
-#define TS_LANGUAGE_METHOD cat(TS_LANGUAGE_NAME, _language)
-#define TS_LANGUAGE_MODULE cat(PyInit_, TS_LANGUAGE_NAME)
+#define TS_LANGUAGE_FUNC cat(tree_sitter_, TS_LANGUAGE_NAME) // Expands to tree_sitter_<language_name>
+#define TS_LANGUAGE_METHOD cat(TS_LANGUAGE_NAME, _language) // Expands to <language_name>_language
+#define TS_LANGUAGE_MODULE cat(PyInit_, TS_LANGUAGE_NAME) // Expands to PyInit_<language_name>
 
-TSLanguage *TS_LANGUAGE_FUNC(void);
+TSLanguage *TS_LANGUAGE_FUNC(void); // Expands to tree_sitter_<language_name>(void), e.g. tree_sitter_python(void)
 
-static PyObject *TS_LANGUAGE_METHOD(PyObject *Py_UNUSED(self), PyObject *Py_UNUSED(args))
-{
+// Python method that wraps the TS_LANGUAGE_FUNC and returns a pointer to the TSLanguage struct
+static PyObject* TS_LANGUAGE_METHOD(PyObject *Py_UNUSED(self), PyObject *Py_UNUSED(args)) {
     return PyLong_FromVoidPtr(TS_LANGUAGE_FUNC());
 }
 
+// Method definition table for the module
 static PyMethodDef methods[] = {
     {"language", TS_LANGUAGE_METHOD, METH_NOARGS, NULL},
     {NULL, NULL, 0, NULL}
 };
 
+// Module definition structure
 static struct PyModuleDef module = {
-    .m_base = PyModuleDef_HEAD_INIT,
-    .m_name = str(TS_LANGUAGE_NAME),
+    PyModuleDef_HEAD_INIT,
+    .m_name = str(TS_LANGUAGE_NAME), // Expands to the language name as a string
     .m_doc = NULL,
     .m_size = -1,
     .m_methods = methods
 };
 
-PyMODINIT_FUNC TS_LANGUAGE_MODULE(void)
-{
+// Module initialization function
+PyMODINIT_FUNC TS_LANGUAGE_MODULE(void) {
     return PyModule_Create(&module);
 }

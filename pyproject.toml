@@ -40,6 +40,7 @@ dev = [
     "cython>=3.0.10",
     "setuptools>=70.1.1",
     "wheel>=0.43.0",
+    "inflection>=0.5.1",
 ]
 
 # linters configuration below
@@ -83,6 +84,7 @@ lint.select = [
     "YTT", # flake8-2020
 ]
 lint.ignore = [
+    "ISC001", # isort - conflict with other rules
     "A003", # flake8-builtins - class attribute {name} is shadowing a python builtin
     "B008", # bugbear - function call parameters init
     "D100", # pydocstyle - missing docstring in public module

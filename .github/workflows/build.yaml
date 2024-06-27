@@ -1,8 +1,9 @@
-name: Release
+name: Build
 
 on:
   push:
-    tags: ['*']
+    branches:
+    - main
 
 jobs:
   build-sdist:
@@ -16,7 +17,7 @@ jobs:
       uses: actions/setup-python@v5
       with:
         cache: pip
-        python-version: '3.9'
+        python-version: 3.12
     - name: Build sources
       run: |-
         pip install build wheel
@@ -33,7 +34,7 @@ jobs:
     runs-on: ${{matrix.os}}
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest, macos-13]
+        os: [ubuntu-latest, windows-latest, macos-latest]
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
@@ -62,24 +63,3 @@ jobs:
         path: dist/*.whl
         name: dist-wheels-${{matrix.os}}
         retention-days: 2
-
-  package:
-    name: Publish Python package
-    needs: [build-sdist, build-wheels]
-    runs-on: ubuntu-latest
-    environment:
-      name: pypi
-      url: https://pypi.org/project/tree-sitter-languages/
-    steps:
-    - name: Download build artifacts
-      uses: actions/download-artifact@v4
-      with:
-        path: dist
-        pattern: dist-*
-        merge-multiple: true
-    - name: Check build artifacts
-      run: ls -l dist
-    - name: Publish to PyPI
-      uses: pypa/gh-action-pypi-publish@release/v1.8
-      with:
-        password: ${{secrets.PYPI_API_TOKEN}}

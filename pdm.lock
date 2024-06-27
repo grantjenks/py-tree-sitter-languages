@@ -5,7 +5,7 @@
 groups = ["default", "dev"]
 strategy = ["cross_platform", "inherit_metadata"]
 lock_version = "4.4.2"
-content_hash = "sha256:80df1113806c96a63419ab3c63398cd39d048a31808ecfc2e49f9cf4c6e247e5"
+content_hash = "sha256:e6d2aad9e2ff405cb0a37f0f6142783192b5fd2ee5f51011f6d03a04e552df6f"
 
 [[package]]
 name = "colorama"
@@ -72,6 +72,17 @@ marker = "python_version < \"3.11\""
 files = [
     {file = "exceptiongroup-1.2.1-py3-none-any.whl", hash = "sha256:5258b9ed329c5bbdd31a309f53cbfb0b155341807f6ff7606a1e801a891b29ad"},
     {file = "exceptiongroup-1.2.1.tar.gz", hash = "sha256:a4785e48b045528f5bfe627b6ad554ff32def154f42372786903b7abcfe1aa16"},
+]
+
+[[package]]
+name = "inflection"
+version = "0.5.1"
+requires_python = ">=3.5"
+summary = "A port of Ruby on Rails inflector to Python"
+groups = ["dev"]
+files = [
+    {file = "inflection-0.5.1-py2.py3-none-any.whl", hash = "sha256:f38b2b640938a4f35ade69ac3d053042959b62a0f1076a5bbaa1b9526605a8a2"},
+    {file = "inflection-0.5.1.tar.gz", hash = "sha256:1a29730d366e996aaacffb2f1f1cb9593dc38e2ddd30c91250c6dde09ea9b417"},
 ]
 
 [[package]]
@@ -258,17 +269,6 @@ files = [
     {file = "tree_sitter-0.22.3-cp39-cp39-musllinux_1_1_aarch64.whl", hash = "sha256:459a0f3bf8d6dbb9e9f651d67cee3a60f0b799fefd4a33f49a7e9501ada98e35"},
     {file = "tree_sitter-0.22.3-cp39-cp39-musllinux_1_1_x86_64.whl", hash = "sha256:4a51bfe99dcd8bbfb0fe95113f0197e6e540db3077abce77a058235beec747a3"},
     {file = "tree_sitter-0.22.3-cp39-cp39-win_amd64.whl", hash = "sha256:8d54ef562492493bf091cb3fd605cb7e60bf1d56634a94ab48075741d823e3a5"},
-]
-
-[[package]]
-name = "types-setuptools"
-version = "70.1.0.20240627"
-requires_python = ">=3.8"
-summary = "Typing stubs for setuptools"
-groups = ["dev"]
-files = [
-    {file = "types-setuptools-70.1.0.20240627.tar.gz", hash = "sha256:385907a47b5cf302b928ce07953cd91147d5de6f3da604c31905fdf0ec309e83"},
-    {file = "types_setuptools-70.1.0.20240627-py3-none-any.whl", hash = "sha256:c7bdf05cd0a8b66868b4774c7b3c079d01ae025d8c9562bfc8bf2ff44d263c9c"},
 ]
 
 [[package]]

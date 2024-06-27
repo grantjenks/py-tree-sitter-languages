@@ -8,15 +8,27 @@ from tree_sitter import Language, Parser
 
 from tree_sitter_language_pack import SupportedLanguage, get_language, get_parser
 
-languages = set(cast(dict[str, Any], loads((Path(__file__).parent.parent.resolve() / "languages.json").read_text())))
+language_definition_list = cast(
+    list[dict[str, str]], loads((Path(__file__).parent.parent.resolve() / "language_definitions.json").read_text())
+)
+language_names = [
+    language_definition.get("directory", language_definition["repo"])
+    .split("/")[-1]
+    .replace("tree-sitter-", "")
+    .replace(
+        "-",
+        "",
+    )
+    for language_definition in language_definition_list
+]
 
 
-@pytest.mark.parametrize("language", languages)
+@pytest.mark.parametrize("language", language_names)
 def test_get_language(language: SupportedLanguage) -> None:
     assert isinstance(get_language(language), Language)
 
 
-@pytest.mark.parametrize("language", languages)
+@pytest.mark.parametrize("language", language_names)
 def test_get_parser(language: SupportedLanguage) -> None:
     assert isinstance(get_parser(language), Parser)
 

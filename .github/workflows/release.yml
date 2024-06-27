@@ -2,7 +2,7 @@ name: Release
 
 on:
   push:
-    tags: ["*"]
+    tags: ['*']
 
 jobs:
   build-sdist:
@@ -10,23 +10,23 @@ jobs:
     runs-on: ubuntu-latest
     continue-on-error: true
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          cache: pip
-          python-version: "3.9"
-      - name: Build sources
-        run: |-
-          pip install build wheel
-          python -mbuild -n -s
-      - name: Upload sources
-        uses: actions/upload-artifact@v4
-        with:
-          name: dist-sources
-          path: dist/*.tar.gz
-          retention-days: 2
+    - name: Checkout repository
+      uses: actions/checkout@v4
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        cache: pip
+        python-version: '3.9'
+    - name: Build sources
+      run: |-
+        pip install build wheel
+        python -mbuild -n -s
+    - name: Upload sources
+      uses: actions/upload-artifact@v4
+      with:
+        name: dist-sources
+        path: dist/*.tar.gz
+        retention-days: 2
 
   build-wheels:
     name: Build wheel on ${{runner.os}}
@@ -35,33 +35,33 @@ jobs:
       matrix:
         os: [ubuntu-latest, windows-latest, macos-13]
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          cache: pip
-          python-version: "3.9"
-      - name: Set up QEMU
-        if: runner.os == 'Linux'
-        uses: docker/setup-qemu-action@v3
-        with:
-          platforms: arm64
-      - name: Build wheels
-        uses: pypa/cibuildwheel@v2.16
-        with:
-          output-dir: dist
-        env:
-          CIBW_ARCHS_WINDOWS: AMD64
-          CIBW_ARCHS_LINUX: x86_64 aarch64
-          CIBW_ARCHS_MACOS: x86_64 arm64
-          CIBW_TEST_SKIP: "*arm64 *aarch64"
-      - name: Upload wheel artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          path: dist/*.whl
-          name: dist-wheels-${{matrix.os}}
-          retention-days: 2
+    - name: Checkout repository
+      uses: actions/checkout@v4
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        cache: pip
+        python-version: '3.9'
+    - name: Set up QEMU
+      if: runner.os == 'Linux'
+      uses: docker/setup-qemu-action@v3
+      with:
+        platforms: arm64
+    - name: Build wheels
+      uses: pypa/cibuildwheel@v2.16
+      with:
+        output-dir: dist
+      env:
+        CIBW_ARCHS_WINDOWS: AMD64
+        CIBW_ARCHS_LINUX: x86_64 aarch64
+        CIBW_ARCHS_MACOS: x86_64 arm64
+        CIBW_TEST_SKIP: '*arm64 *aarch64'
+    - name: Upload wheel artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        path: dist/*.whl
+        name: dist-wheels-${{matrix.os}}
+        retention-days: 2
 
   package:
     name: Publish Python package
@@ -71,15 +71,15 @@ jobs:
       name: pypi
       url: https://pypi.org/project/tree-sitter-languages/
     steps:
-      - name: Download build artifacts
-        uses: actions/download-artifact@v4
-        with:
-          path: dist
-          pattern: dist-*
-          merge-multiple: true
-      - name: Check build artifacts
-        run: ls -l dist
-      - name: Publish to PyPI
-        uses: pypa/gh-action-pypi-publish@release/v1.8
-        with:
-          password: ${{secrets.PYPI_API_TOKEN}}
+    - name: Download build artifacts
+      uses: actions/download-artifact@v4
+      with:
+        path: dist
+        pattern: dist-*
+        merge-multiple: true
+    - name: Check build artifacts
+      run: ls -l dist
+    - name: Publish to PyPI
+      uses: pypa/gh-action-pypi-publish@release/v1.8
+      with:
+        password: ${{secrets.PYPI_API_TOKEN}}

@@ -17,7 +17,8 @@ typedef struct TSLanguage TSLanguage;
 
 TSLanguage *TS_LANGUAGE_FUNC(void);
 
-static PyObject* TS_LANGUAGE_METHOD(PyObject *Py_UNUSED(self), PyObject *Py_UNUSED(args)) {
+static PyObject *TS_LANGUAGE_METHOD(PyObject *Py_UNUSED(self), PyObject *Py_UNUSED(args))
+{
     return PyLong_FromVoidPtr(TS_LANGUAGE_FUNC());
 }
 
@@ -34,6 +35,7 @@ static struct PyModuleDef module = {
     .m_methods = methods
 };
 
-PyMODINIT_FUNC TS_LANGUAGE_MODULE(void) {
+PyMODINIT_FUNC TS_LANGUAGE_MODULE(void)
+{
     return PyModule_Create(&module);
 }

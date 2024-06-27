@@ -1,11 +1,9 @@
-[build-system]
-requires = ["setuptools>=43", "wheel"]
-build-backend = "setuptools.build_meta"
-
 [project]
-name = "tree-sitter-languages"
-version = "2.0.0"
-description = "Binary Python wheels for many tree-sitter languages"
+name = "tree-sitter-language-pack"
+version = "0.1.0"
+description = "Extensive Language Pack for Tree-Sitter"
+authors = [{ name = "Na'aman Hirschfeld", email = "nhirschfeld@gmail.com" }]
+
 keywords = ["tree-sitter"]
 classifiers = [
     "Development Status :: 5 - Production/Stable",
@@ -16,37 +14,143 @@ classifiers = [
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: Implementation :: CPython",
 ]
-requires-python = ">=3.9"
-readme = "README.rst"
-dependencies = [
-    "tree-sitter~=0.22",
-]
 
-[[project.authors]]
-name = "Grant Jenks"
-email = "contact@grantjenks.com"
+dependencies = [
+    "tree-sitter>=0.22.0"
+]
+requires-python = ">=3.9.0"
+readme = "README.md"
+license = { file = "LICENSE" }
 
 [project.urls]
-Homepage = "https://github.com/grantjenks/py-tree-sitter-languages"
+homepage = "https://github.com/grantjenks/py-tree-sitter-languages"
 
-[tool.ruff]
-target-version = "py39"
-line-length = 80
-indent-width = 4
-extend-exclude = [
-    ".github",
-    "__pycache__",
-    "setup.py",
-    "tree_sitter_languages/repos",
+[build-system]
+requires = ["setuptools", "wheel", "cython"]
+build-backend = "setuptools.build_meta"
+
+[tool.pdm]
+distribution = true
+
+[tool.pdm.dev-dependencies]
+dev = [
+    "mypy>=1.10.1",
+    "ruff>=0.4.10",
+    "pytest>=8.2.2",
+    "cython>=3.0.10",
+    "setuptools>=70.1.1",
+    "wheel>=0.43.0",
 ]
 
-[tool.ruff.format]
-quote-style = "double"
-indent-style = "space"
+# linters configuration below
+[tool.ruff]
+line-length = 120
+target-version = "py312"
 
-[tool.cibuildwheel]
-build-frontend = "build"
-test-command = "python -munittest discover -s {project}/tests"
+lint.select = [
+    "A",   # flake8-builtins
+    "B",   # flake8-bugbear
+    "BLE", # flake8-blind-except
+    "C4",  # flake8-comprehensions
+    "C90", # mccabe
+    "D",   # pydocstyle
+    "DJ",  # flake8-django
+    "DTZ", # flake8-datetimez
+    "E",   # pycodestyle errors
+    "ERA", # eradicate
+    "EXE", # flake8-executable
+    "F",   # pyflakes
+    "G",   # flake8-logging-format
+    "I",   # isort
+    "ICN", # flake8-import-conventions
+    "ISC", # flake8-implicit-str-concat
+    "N",   # pep8-naming
+    "PIE", # flake8-pie
+    "PLC", # pylint - convention
+    "PLE", # pylint - error
+    "PLW", # pylint - warning
+    "Q",   # flake8-quotes
+    "RET", # flake8-return
+    "RUF", # Ruff-specific rules
+    "S",   # flake8-bandit
+    "SIM", # flake8-simplify
+    "T10", # flake8-debugger
+    "T20", # flake8-print
+    "TCH", # flake8-type-checking
+    "TID", # flake8-tidy-imports
+    "UP",  # pyupgrade
+    "W",   # pycodestyle - warning
+    "YTT", # flake8-2020
+]
+lint.ignore = [
+    "A003", # flake8-builtins - class attribute {name} is shadowing a python builtin
+    "B008", # bugbear - function call parameters init
+    "D100", # pydocstyle - missing docstring in public module
+    "D104", # pydocstyle - missing docstring in public package
+    "D107", # pydocstyle - missing docstring in __init__
+    "E203", # whitespace before ':', handled by ruff format
+    "E501", # pycodestyle line too long, handled by ruff format
+]
+src = ["tree_sitter_language_pack", "tests"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**/*.*" = [
+    "A",
+    "ARG",
+    "B",
+    "BLE",
+    "C901",
+    "D",
+    "DTZ",
+    "EM",
+    "FBT",
+    "G",
+    "N",
+    "PGH",
+    "PIE",
+    "PLR",
+    "PLW",
+    "RSE",
+    "S",
+    "S101",
+    "SIM",
+    "TCH",
+    "TRY",
+]
+"e2e/**/*.*" = ["S101"]
+
+[tool.ruff.format]
+docstring-code-format = true
+docstring-code-line-length = 120
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.lint.isort]
+known-first-party = ["tree_sitter_language_pack", "tests"]
 
 [tool.mypy]
-exclude = ["tree_sitter_languages/repos"]
+packages = ["tree_sitter_language_pack", "tests"]
+python_version = "3.12"
+disallow_any_generics = false
+disallow_untyped_decorators = false
+implicit_reexport = false
+show_error_codes = true
+strict = true
+warn_redundant_casts = true
+warn_return_any = true
+warn_unreachable = true
+warn_unused_configs = true
+warn_unused_ignores = true
+
+[tool.coverage.run]
+omit = ["*/tests/*"]
+plugins = ["covdefaults"]
+source = ["tree_sitter_language_pack"]
+
+[tool.coverage.report]
+exclude_lines = ['if TYPE_CHECKING:']
+fail_under = 100
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"

@@ -2,18 +2,18 @@ name: Tests
 
 on:
   push:
-    branches: ["*"]
+    branches: ['*']
     paths:
-      - setup.py
-      - languages.json
-      - tests/
-      - tree_sitter_languages/
+    - setup.py
+    - languages.json
+    - tests/
+    - tree_sitter_languages/
   pull_request:
     paths:
-      - setup.py
-      - languages.json
-      - tests/
-      - tree_sitter_languages/
+    - setup.py
+    - languages.json
+    - tests/
+    - tree_sitter_languages/
 
 jobs:
   test:
@@ -21,18 +21,18 @@ jobs:
     runs-on: ubuntu-latest
     continue-on-error: true
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          cache: pip
-          python-version: "3.9"
-      - name: Set up tree-sitter CLI
-        uses: tree-sitter/setup-action/cli/@v1
-      - name: Install package
-        run: pip install -v -e .
-        env:
-          TS_REGENERATE: "1"
-      - name: Run tests
-        run: python -munittest discover -v tests
+    - name: Checkout repository
+      uses: actions/checkout@v4
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        cache: pip
+        python-version: '3.9'
+    - name: Set up tree-sitter CLI
+      uses: tree-sitter/setup-action/cli/@v1
+    - name: Install package
+      run: pip install -v -e .
+      env:
+        TS_REGENERATE: '1'
+    - name: Run tests
+      run: python -munittest discover -v tests

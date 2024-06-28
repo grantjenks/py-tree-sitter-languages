@@ -4,8 +4,8 @@ from pathlib import Path
 from platform import system
 from typing import Any, NotRequired, TypedDict
 
-from setuptools import Extension, find_packages, setup
-from setuptools.command.build_ext import build_ext
+from setuptools import Extension, find_packages, setup  # type: ignore[import-untyped]
+from setuptools.command.build_ext import build_ext  # type: ignore[import-untyped]
 from wheel.bdist_wheel import bdist_wheel  # type: ignore[import-untyped]
 
 
@@ -31,7 +31,7 @@ language_names = [
     )
     for language_definition in language_definition_list
 ]
-# Create a dictionary of language definitions mapped to the camelized keys
+# Create a dictionary of language definitions mapped to the language names
 language_definitions = dict(zip(language_names, language_definition_list, strict=False))
 # Common C source file for all language extensions
 common_source = (Path(__file__).parent / "./tree_sitter_language_pack/language.c").relative_to(Path(__file__).parent)
@@ -76,7 +76,7 @@ def create_extension(*, language_name: str) -> Extension:
 extensions = [create_extension(language_name=language_name) for language_name in language_names]
 
 
-class BuildExt(build_ext):
+class BuildExt(build_ext):  # type: ignore[misc]
     """Custom build extension to handle tree-sitter language repositories."""
 
     def build_extension(self, ext: Extension) -> None:
@@ -93,17 +93,22 @@ class BuildExt(build_ext):
         if directory.is_dir():
             self.spawn(["git", "-C", str(relative_path), "pull", "-q", "--depth=1"])
         else:
-            branch = language_definition.get("branch", "main")
             clone_cmd = [
                 "git",
                 "clone",
                 "-q",
                 "--depth=1",
-                f"--branch={branch}",
-                language_definition["repo"],
-                str(relative_path),
             ]
-            self.spawn(clone_cmd)
+            if branch := language_definition.get("branch"):
+                clone_cmd.append(f"--branch={branch}")
+
+            self.spawn(
+                [
+                    *clone_cmd,
+                    language_definition["repo"],
+                    str(relative_path),
+                ]
+            )
 
         if cmd := language_definition.get("cmd"):
             chdir(directory)

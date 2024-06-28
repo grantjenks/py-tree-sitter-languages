@@ -20,7 +20,13 @@ language_names = [
         "",
     )
     for language_definition in language_definition_list
-]
+] + ["csharp", "embeddedtemplate", "wgslbevy"]
+
+
+def test_language_names() -> None:
+    assert sorted([*SupportedLanguage.__args__[0].__args__, *SupportedLanguage.__args__[1].__args__]) == sorted(  # type: ignore[attr-defined]
+        language_names
+    )
 
 
 @pytest.mark.parametrize("language", language_names)

@@ -44,5 +44,7 @@ jobs:
           ./pdm.lock
     - name: Install Dependencies
       run: pdm install
+    - name: Build Bindings
+      run: pdm run setup.py build_ext --inplace
     - name: Run Tests
       run: pdm run test

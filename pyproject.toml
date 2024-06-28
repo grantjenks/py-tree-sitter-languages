@@ -6,9 +6,9 @@ authors = [{ name = "Na'aman Hirschfeld", email = "nhirschfeld@gmail.com" }]
 
 keywords = ["tree-sitter"]
 classifiers = [
-    "Development Status :: 5 - Production/Stable",
+    "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
-    "License :: OSI Approved :: Apache Software License",
+    "OSI Approved :: MIT License",
     "Natural Language :: English",
     "Programming Language :: Python",
     "Programming Language :: Python :: 3",
@@ -26,7 +26,7 @@ readme = "README.md"
 license = { file = "LICENSE" }
 
 [project.urls]
-homepage = "https://github.com/grantjenks/py-tree-sitter-languages"
+homepage = "https://github.com/Goldziher/tree-sitter-language-pack"
 
 [build-system]
 requires = ["setuptools", "wheel", "cython"]
@@ -117,7 +117,7 @@ known-first-party = ["tree_sitter_language_pack", "tests"]
 
 [tool.mypy]
 packages = ["tree_sitter_language_pack", "tests"]
-python_version = "3.12"
+python_version = "3.9"
 disallow_any_generics = false
 disallow_untyped_decorators = false
 implicit_reexport = false
@@ -128,12 +128,3 @@ warn_return_any = true
 warn_unreachable = true
 warn_unused_configs = true
 warn_unused_ignores = true
-
-[tool.coverage.run]
-omit = ["*/tests/*"]
-plugins = ["covdefaults"]
-source = ["tree_sitter_language_pack"]
-
-[tool.coverage.report]
-exclude_lines = ['if TYPE_CHECKING:']
-fail_under = 100

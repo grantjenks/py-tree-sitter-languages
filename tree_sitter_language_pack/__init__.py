@@ -1,5 +1,5 @@
 from importlib import import_module
-from typing import Callable, Literal, cast
+from typing import Callable, Literal, Union, cast
 
 from tree_sitter import Language, Parser
 from tree_sitter_c_sharp import language as c_sharp_language
@@ -7,7 +7,7 @@ from tree_sitter_embedded_template import language as embedded_template_language
 from tree_sitter_wgsl_bevy import language as wgsl_bevy_language
 
 InstalledBindings = Literal["csharp", "embeddedtemplate", "wgslbevy"]
-SupportedLanguage = (
+SupportedLanguage = Union[
     Literal[
         "agda",
         "arduino",
@@ -110,9 +110,9 @@ SupportedLanguage = (
         "xml",
         "yaml",
         "yuck",
-    ]
-    | InstalledBindings
-)
+    ],
+    InstalledBindings,
+]
 
 installed_bindings_map: dict[InstalledBindings, Callable[[], int]] = {
     "csharp": c_sharp_language,

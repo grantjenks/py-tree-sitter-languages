@@ -45,6 +45,7 @@ Language.build_library(
     [
         'vendor/tree-sitter-bash',
         'vendor/tree-sitter-c',
+        'vendor/tree-sitter-cfg',
         'vendor/tree-sitter-c-sharp',
         'vendor/tree-sitter-commonlisp',
         'vendor/tree-sitter-cpp',

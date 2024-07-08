@@ -1,3 +1,4 @@
+https://github.com/LeviOP/tree-sitter-cfg a097eb08657cc3f0bb5e79dcc106563f74f0f13a
 https://github.com/WhatsApp/tree-sitter-erlang 54b6f814f43c4eac81eeedefaa7cc8762fec6683
 https://github.com/Azganoth/tree-sitter-lua 6b02dfd7f07f36c223270e97eb0adf84e15a4cef
 https://github.com/Wilfred/tree-sitter-elisp 4b0e4a3891337514126ec72c7af394c0ff2cf48c

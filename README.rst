@@ -351,4 +351,6 @@ form:
 * https://github.com/stadelmanma/tree-sitter-fixed-form-fortran - licensed under
   the MIT License.
 
+* https://github.com/LeviOP/tree-sitter-cfg - licensed under the MIT License.
+
 .. _`tree-sitter`: https://tree-sitter.github.io/

@@ -24,6 +24,7 @@ https://github.com/theHamsta/tree-sitter-commonlisp c7e814975ab0d0d04333d1f32391
 https://github.com/tree-sitter/tree-sitter-bash f7239f638d3dc16762563a9027faeee518ce1bd9
 https://github.com/tree-sitter/tree-sitter-c 34f4c7e751f4d661be3e23682fe2631d6615141d
 https://github.com/tree-sitter/tree-sitter-c-sharp dd5e59721a5f8dae34604060833902b882023aaf
+https://github.com/houcheng/tree-sitter-fsharp e0ce0791c1827a15beae99cdcc2dfb7ac7563f71
 https://github.com/tree-sitter/tree-sitter-cpp a71474021410973b29bfe99440d57bcd750246b1
 https://github.com/tree-sitter/tree-sitter-css 98c7b3dceb24f1ee17f1322f3947e55638251c37
 https://github.com/tree-sitter/tree-sitter-embedded-template 203f7bd3c1bbfbd98fc19add4b8fcb213c059205

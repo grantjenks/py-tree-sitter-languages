@@ -8,6 +8,8 @@ init = (pathlib.Path('tree_sitter_languages') / '__init__.py').read_text()
 match = re.search(r"^__version__ = '(.+)'$", init, re.MULTILINE)
 version = match.group(1)
 
+os.environ["MAKEFLAGS"] = "-j1"
+
 with open('README.rst') as reader:
     readme = reader.read()
 
@@ -23,7 +25,7 @@ setuptools.setup(
     ext_modules=cythonize('tree_sitter_languages/core.pyx', language_level='3'),
     packages=['tree_sitter_languages'],
     package_data={'tree_sitter_languages': ['languages.so', 'languages.dll']},
-    install_requires=['tree-sitter'],
+    install_requires=['tree-sitter~=0.21.3'],
     project_urls={
         'Documentation': 'https://github.com/grantjenks/py-tree-sitter-languages',
         'Source': 'https://github.com/grantjenks/py-tree-sitter-languages',

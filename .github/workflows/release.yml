@@ -28,6 +28,24 @@ jobs:
         with:
           platforms: all
 
+      - name: Increase Swap Space (8GB for QEMU stability)
+        if: runner.os == 'Linux'
+        run: |
+          echo "Current Swap:"
+          free -h
+
+          echo "Allocating 8GB Swap..."
+          sudo fallocate -l 8G /swapfile
+          sudo chmod 600 /swapfile
+          sudo mkswap /swapfile
+          sudo swapon /swapfile
+
+          echo "Updated Memory Info:"
+          free -h
+
+          # Confirm swap is active
+          swapon --show
+
       - name: Install cibuildwheel
         run: python -m pip install cibuildwheel==2.16.2
 
@@ -37,7 +55,7 @@ jobs:
           CIBW_BEFORE_BUILD: pip install cython==3.0.8 && pip install -e . && python build.py
           CIBW_TEST_REQUIRES: pytest
           CIBW_TEST_COMMAND: pytest --showlocals {package}/tests
-          CIBW_SKIP: "{cp36**,pp*}"
+          CIBW_SKIP: "{cp36**,cp37**,pp*}"
           CIBW_ARCHS_MACOS: x86_64 arm64
           CIBW_ARCHS_LINUX: auto aarch64
           CIBW_BUILD_VERBOSITY: 3

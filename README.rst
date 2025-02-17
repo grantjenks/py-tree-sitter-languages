@@ -13,6 +13,10 @@ for individual languages.
 
 .. _`py-tree-sitter-languages`: https://github.com/grantjenks/py-tree-sitter-languages
 
+Status
+===========
+
+This library is unmaintained, as an alternative you can use .. _`tree-sitter-language-pack`: https://github.com/Goldziher/tree-sitter-language-pack
 
 Install
 =======

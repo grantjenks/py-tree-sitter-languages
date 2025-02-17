@@ -31,6 +31,7 @@ LANGUAGES = [
     'lua',
     'make',
     'markdown',
+    'matlab',
     'objc',
     'ocaml',
     'perl',

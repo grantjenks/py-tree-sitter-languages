@@ -1,4 +1,8 @@
+import json
 import os
+import glob
+import pprint
+import re
 import subprocess
 import sys
 from tree_sitter import Language
@@ -32,13 +36,12 @@ else:
         subprocess.check_call(["git", "fetch", "--depth=1", "origin", commit], cwd=clone_directory)
         subprocess.check_call(["git", "checkout", commit], cwd=clone_directory)
 
-print()
-
 if sys.platform == "win32":
     languages_filename = "tree_sitter_languages\\languages.dll"
 else:
     languages_filename = "tree_sitter_languages/languages.so"
 
+index=dict()
 print(f"{sys.argv[0]}: Building", languages_filename)
 Language.build_library(
     languages_filename,
@@ -92,5 +95,11 @@ Language.build_library(
         'vendor/tree-sitter-typescript/tsx',
         'vendor/tree-sitter-typescript/typescript',
         'vendor/tree-sitter-yaml',
-    ]
+    ],
+    index,
 )
+
+print(f"{sys.argv[0]}: Writing index entries for {len(index)} languages")
+with open('tree_sitter_languages/generated.pyx', 'w') as file:
+    file.write('index = ')
+    pprint.pprint(index, stream=file)

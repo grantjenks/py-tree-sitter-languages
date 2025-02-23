@@ -1,6 +1,8 @@
 import pathlib
+import re
 import sys
 
+from .generated import index
 from tree_sitter import Language, Parser
 
 
@@ -14,6 +16,9 @@ def get_language(language):
     language = Language(binary_path, language)
     return language
 
+def get_language_for_file(file_name, file_contents=None):
+    name = Language.lookup_language_name_for_file(index, file_name, file_contents)
+    return get_language(name) if name is not None else None
 
 def get_parser(language):
     language = get_language(language)

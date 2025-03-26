@@ -45,6 +45,7 @@ LANGUAGES = [
     'scala',
     'sql',
     'sqlite',
+    'svelte',
     'toml',
     'tsq',
     'typescript',

@@ -87,6 +87,7 @@ Language.build_library(
         'vendor/tree-sitter-scala',
         'vendor/tree-sitter-sql',
         'vendor/tree-sitter-sqlite',
+        'vendor/tree-sitter-svelte',
         'vendor/tree-sitter-toml',
         'vendor/tree-sitter-tsq',
         'vendor/tree-sitter-typescript/tsx',

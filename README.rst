@@ -284,6 +284,9 @@ form:
 * https://github.com/tree-sitter/tree-sitter-embedded-template — licensed
   under the MIT License.
 
+* https://github.com/the-mikedavis/tree-sitter-git-config - licensed under
+  the MIT License.
+
 * https://github.com/tree-sitter/tree-sitter-go — licensed under the MIT
   License.
 

@@ -16,7 +16,10 @@ for individual languages.
 Status
 ===========
 
-This library is unmaintained, as an alternative you can use .. _`tree-sitter-language-pack`: https://github.com/Goldziher/tree-sitter-language-pack
+This library is unmaintained. As an alternative, you can use
+`tree-sitter-language-pack`_.
+
+.. _`tree-sitter-language-pack`: https://github.com/Goldziher/tree-sitter-language-pack
 
 Install
 =======

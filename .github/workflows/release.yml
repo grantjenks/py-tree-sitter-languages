@@ -29,15 +29,15 @@ jobs:
           platforms: all
 
       - name: Install cibuildwheel
-        run: python -m pip install cibuildwheel==2.16.2
+        run: python -m pip install cibuildwheel==2.22.0
 
       - name: Build wheels
         run: python -m cibuildwheel --output-dir dist
         env:
-          CIBW_BEFORE_BUILD: pip install cython==3.0.8 && pip install -e . && python build.py
+          CIBW_BEFORE_BUILD: pip install cython==3.0.11 "tree-sitter<0.22" && pip install -e . && python build.py
           CIBW_TEST_REQUIRES: pytest
           CIBW_TEST_COMMAND: pytest --showlocals {package}/tests
-          CIBW_SKIP: "{cp36**,pp*}"
+          CIBW_SKIP: "{cp36**,cp37**,pp*,*musllinux*}"
           CIBW_ARCHS_MACOS: x86_64 arm64
           CIBW_ARCHS_LINUX: auto aarch64
           CIBW_BUILD_VERBOSITY: 3
@@ -52,6 +52,8 @@ jobs:
     if: startsWith(github.ref, 'refs/tags/v')
     needs: builds
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
 
     steps:
       - uses: actions/checkout@v4
@@ -69,6 +71,3 @@ jobs:
 
       - name: Publish package
         uses: pypa/gh-action-pypi-publish@release/v1
-        with:
-          user: __token__
-          password: ${{ secrets.PYPI_API_TOKEN }}

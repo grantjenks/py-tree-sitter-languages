@@ -23,7 +23,7 @@ setuptools.setup(
     ext_modules=cythonize('tree_sitter_languages/core.pyx', language_level='3'),
     packages=['tree_sitter_languages'],
     package_data={'tree_sitter_languages': ['languages.so', 'languages.dll']},
-    install_requires=['tree-sitter'],
+    install_requires=['tree-sitter<0.22'],
     project_urls={
         'Documentation': 'https://github.com/grantjenks/py-tree-sitter-languages',
         'Source': 'https://github.com/grantjenks/py-tree-sitter-languages',
